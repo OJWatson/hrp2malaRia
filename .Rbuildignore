@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^Plots$
+^Scripts$
+^contexts$
+^.RData$
+^\.travis\.yml$
+^PlottingScripts&
+R/ring-simulation7.R

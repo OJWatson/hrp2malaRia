@@ -1,0 +1,851 @@
+"","NAME","COUNTRY_ID","GAUL_CODE","Country","PfPR_2010","ft","hrp2_concern..High...4..Moderate...3..Slight...2..Marginal...1.","Years.at.which.20..population.only.infected.with.hrp2.deletions..NA.means..20..or.NA.due.to.no.malaria.prealence."
+"0","Administrative unit not available","SDN",124,"Sudan",0.0443,0.390642,4,3.74546240108232
+"1","Adrar","DZA",341,NA,NA,NA,NA,NA
+"2","Ain-Defla","DZA",342,NA,NA,NA,NA,NA
+"3","Ain-Temouchent","DZA",343,NA,NA,NA,NA,NA
+"4","Alger","DZA",344,NA,NA,NA,NA,NA
+"5","Annaba","DZA",345,NA,NA,NA,NA,NA
+"6","Batna","DZA",346,NA,NA,NA,NA,NA
+"7","Bechar","DZA",347,NA,NA,NA,NA,NA
+"8","Bejaia","DZA",348,NA,NA,NA,NA,NA
+"9","Biskra","DZA",349,NA,NA,NA,NA,NA
+"10","Blida","DZA",350,NA,NA,NA,NA,NA
+"11","Bordj Bou Arrer","DZA",351,NA,NA,NA,NA,NA
+"12","Bouira","DZA",352,NA,NA,NA,NA,NA
+"13","Boumerdes","DZA",353,NA,NA,NA,NA,NA
+"14","Chlef","DZA",354,NA,NA,NA,NA,NA
+"15","Constantine","DZA",355,NA,NA,NA,NA,NA
+"16","Djelfa","DZA",356,NA,NA,NA,NA,NA
+"17","El Bayadh","DZA",357,NA,NA,NA,NA,NA
+"18","El Oued","DZA",358,NA,NA,NA,NA,NA
+"19","El-Tarf","DZA",359,NA,NA,NA,NA,NA
+"20","Ghardaia","DZA",360,NA,NA,NA,NA,NA
+"21","Guelma","DZA",361,NA,NA,NA,NA,NA
+"22","Illizi","DZA",362,NA,NA,NA,NA,NA
+"23","Jijel","DZA",363,NA,NA,NA,NA,NA
+"24","Khenchela","DZA",364,NA,NA,NA,NA,NA
+"25","Laghouat","DZA",365,NA,NA,NA,NA,NA
+"26","Mascara","DZA",366,NA,NA,NA,NA,NA
+"27","Medea","DZA",367,NA,NA,NA,NA,NA
+"28","Mila","DZA",368,NA,NA,NA,NA,NA
+"29","Mostaganem","DZA",369,NA,NA,NA,NA,NA
+"30","M'Sila","DZA",370,NA,NA,NA,NA,NA
+"31","Naama","DZA",371,NA,NA,NA,NA,NA
+"32","Oran","DZA",372,NA,NA,NA,NA,NA
+"33","Ouargla","DZA",373,NA,NA,NA,NA,NA
+"34","Oum El Bouaghi","DZA",374,NA,NA,NA,NA,NA
+"35","Relizane","DZA",375,NA,NA,NA,NA,NA
+"36","Saida","DZA",376,NA,NA,NA,NA,NA
+"37","Setif","DZA",377,NA,NA,NA,NA,NA
+"38","Sidi Bel Abbes","DZA",378,NA,NA,NA,NA,NA
+"39","Skikda","DZA",379,NA,NA,NA,NA,NA
+"40","Souk-Ahras","DZA",380,NA,NA,NA,NA,NA
+"41","Tamanrasset","DZA",381,NA,NA,NA,NA,NA
+"42","Tebessa","DZA",382,NA,NA,NA,NA,NA
+"43","Tindouf","DZA",383,NA,NA,NA,NA,NA
+"44","Tiaret","DZA",384,NA,NA,NA,NA,NA
+"45","Tipaza","DZA",385,NA,NA,NA,NA,NA
+"46","Tissemsilt","DZA",386,NA,NA,NA,NA,NA
+"47","Tizi Ouzou","DZA",387,NA,NA,NA,NA,NA
+"48","Tlemcen","DZA",388,NA,NA,NA,NA,NA
+"49","Bengo","AGO",398,"Angola",0.1244,0.407833,4,4.52544654318848
+"50","Benguela","AGO",399,"Angola",0.0607,0.240248,3,8.63770289117785
+"51","Bie","AGO",400,"Angola",0.069,0.323525,4,5.0642216866792
+"52","Cabinda","AGO",401,"Angola",0.142,0.375383,4,5.71092492817067
+"53","Cuando Cubango","AGO",402,"Angola",0.0547,0.362102,4,4.29280025096551
+"54","Cuanza Sul","AGO",403,"Angola",0.1465,0.270682,3,8.9391231120624
+"55","Cunene","AGO",404,"Angola",0.0661,0.361567,4,4.30204232343629
+"56","Huambo","AGO",405,"Angola",0.0295,0.342347,4,4.66842384100236
+"57","Huila","AGO",406,"Angola",0.1043,0.275228,3,7.16890654298168
+"58","Kuanza Norte","AGO",407,"Angola",0.2015,0.330498,3,8.93617604961584
+"59","Luanda","AGO",408,"Angola",0.0244,0.281223,3,6.44038484172948
+"60","Lunda Norte","AGO",409,"Angola",0.1327,0.468704,4,4.04129685258446
+"61","Lunda Sul","AGO",410,"Angola",0.0836,0.419702,4,3.28300554225838
+"62","Malanje","AGO",411,"Angola",0.2025,0.362025,3,8.22101066619945
+"63","Moxico","AGO",412,"Angola",0.0823,0.349955,4,4.52457836466704
+"64","Namibe","AGO",413,"Angola",0.0479,0.201517,3,11.3396426735083
+"65","Uige","AGO",414,"Angola",0.0986,0.342235,4,4.91520182831564
+"66","Zaire","AGO",415,"Angola",0.2886,0.435715,3,9.95910561809126
+"67","Alibori","BEN",609,"Benin",0.4993,0.364492,1,NA
+"68","Atakora","BEN",610,"Benin",0.6304,0.461653,1,NA
+"69","Atlantique","BEN",611,"Benin",0.1747,0.408527,3,6.24761949886937
+"70","Borgou","BEN",612,"Benin",0.4132,0.461578,2,17.0184680720491
+"71","Collines","BEN",613,"Benin",0.3069,0.440808,3,10.739669385668
+"72","Couffo","BEN",614,"Benin",0.2744,0.436174,3,9.30338488729119
+"73","Donga","BEN",615,"Benin",0.5265,0.461653,1,NA
+"74","Littoral","BEN",616,"Benin",0.0741,0.408527,4,3.45046841804404
+"75","Mono","BEN",617,"Benin",0.2093,0.436174,3,6.9418696083092
+"76","Oueme","BEN",618,"Benin",0.1286,0.419361,4,4.49522455287913
+"77","Plateau","BEN",619,"Benin",0.2455,0.419361,3,8.58612857462004
+"78","Zou","BEN",620,"Benin",0.27,0.440808,3,9.04487754344501
+"79","Central","BWA",654,"Botswana",0.0102,0.304621,4,5.57583802866632
+"80","Chobe","BWA",655,"Botswana",0.022,0.3046,4,5.57583802866632
+"81","Ghanzi","BWA",656,"Botswana",0.0233,0.348363,4,4.55288618256554
+"82","Kgalagadi","BWA",657,"Botswana",3e-04,0.29992,4,5.73524410043187
+"83","Kgatleng","BWA",658,"Botswana",8e-04,0.270359,3,6.95236586989542
+"84","Kweneng","BWA",659,"Botswana",0.01,0.314123,4,5.3032135829619
+"85","Ngamiland","BWA",660,"Botswana",0.0164,0.3046,4,5.57583802866632
+"86","North East","BWA",661,"Botswana",0.005,0.214898,3,10.3303018595951
+"87","South-East","BWA",662,"Botswana",0.023,0.198,3,11.6112842023271
+"88","Southern","BWA",663,"Botswana",0.0164,0.454359,4,2.88953804142398
+"89","Abim","UGA",743,"Uganda",0.3622,0.355542,2,16.6878216253109
+"90","Amudat","UGA",744,"Uganda",0.1083,0.355542,4,4.96961195951515
+"91","Amuru","UGA",745,"Uganda",0.5347,0.355542,1,NA
+"92","Apac","UGA",746,"Uganda",0.5959,0.355542,1,NA
+"93","Budaka","UGA",747,"Uganda",0.5676,0.470204,1,NA
+"94","Bugiri","UGA",748,"Uganda",0.7224,0.4572,1,NA
+"95","Buikwe","UGA",749,"Uganda",0.4081,NA,NA,NA
+"96","Bukomansimbi","UGA",750,"Uganda",0.5083,0.398838,1,NA
+"97","Bukwo","UGA",751,"Uganda",0.0635,0.470204,4,2.75423407547294
+"98","Bulambuli","UGA",752,"Uganda",0.2765,0.470204,3,8.77609368394325
+"99","Buliisa","UGA",753,"Uganda",0.4224,0.380436,1,NA
+"100","Bundibugyo","UGA",754,"Uganda",0.2308,0.380436,3,8.91151509364141
+"101","Bushenyi","UGA",755,"Uganda",0.1281,0.260009,3,8.77819778490171
+"102","Buyende","UGA",756,"Uganda",0.6194,0.4572,1,NA
+"103","Butambala","UGA",757,"Uganda",0.3077,0.398838,3,11.8034276331736
+"104","Iganga","UGA",758,"Uganda",0.7186,0.4572,1,NA
+"105","Kalungu","UGA",759,"Uganda",0.4148,0.398838,2,18.9771319364287
+"106","Kamuli","UGA",760,"Uganda",0.6448,0.4572,1,NA
+"107","Kapchorwa","UGA",761,"Uganda",0.2148,0.470204,3,6.59690512768486
+"108","Sheema","UGA",762,"Uganda",0.1316,0.260009,3,8.90924895799495
+"109","Kitgum","UGA",763,"Uganda",0.3329,0.355542,2,14.6593404657961
+"110","Kole","UGA",764,"Uganda",0.6258,0.355542,1,NA
+"111","Kotido","UGA",765,"Uganda",0.1991,0.355542,3,8.24140797501556
+"112","Kween","UGA",766,"Uganda",0.0849,0.470204,4,2.75423407547294
+"113","Lamwo","UGA",767,"Uganda",0.3296,0.355542,2,14.4722422079138
+"114","Luuka","UGA",768,"Uganda",0.6909,0.4572,1,NA
+"115","Manafwa","UGA",769,"Uganda",0.3979,0.470204,2,15.6432036158943
+"116","Masaka","UGA",770,"Uganda",0.3891,0.398838,2,17.0414135045406
+"117","Masindi","UGA",771,"Uganda",0.469,0.380436,1,NA
+"118","Moroto","UGA",772,"Uganda",0.1188,0.355542,4,5.28855326931907
+"119","Nakapiripirit","UGA",773,"Uganda",0.1601,0.355542,3,6.74755275558898
+"120","Namutumba","UGA",774,"Uganda",0.7246,0.4572,1,NA
+"121","Napak","UGA",775,"Uganda",0.191,0.355542,3,7.90666398724238
+"122","Nebbi","UGA",776,"Uganda",0.3394,0.425836,2,12.9324861175377
+"123","Ngora","UGA",777,"Uganda",0.434,0.470204,2,18.3965377705165
+"124","Buhweju","UGA",778,"Uganda",0.1049,0.260009,3,7.94646519458493
+"125","Ntoroko","UGA",779,"Uganda",0.2325,0.380436,3,8.99374494110286
+"126","Maracha","UGA",780,"Uganda",0.5064,0.425836,1,NA
+"127","Otuke","UGA",781,"Uganda",0.4568,0.355542,1,NA
+"128","Oyam","UGA",782,"Uganda",0.6296,0.355542,1,NA
+"129","Pader","UGA",783,"Uganda",0.4883,0.355542,1,NA
+"130","Rubirizi","UGA",784,"Uganda",0.1584,0.260009,3,9.92331386104627
+"131","Sironko","UGA",785,"Uganda",0.3171,0.470204,3,10.6677867127587
+"132","Soroti","UGA",786,"Uganda",0.4298,0.470204,2,18.0566340651056
+"133","Zombo","UGA",787,"Uganda",0.4177,0.425836,2,18.3340734011168
+"134","Bukedea","UGA",788,"Uganda",0.4151,0.470204,2,16.9010143418581
+"135","Dokolo","UGA",789,"Uganda",0.4987,0.355542,1,NA
+"136","Agago","UGA",790,"Uganda",0.3849,0.355542,2,18.3030734952322
+"137","Adamaoua","CMR",815,"Cameroon",0.2905,0.33525,2,12.8716582277354
+"138","Centre","CMR",816,"Cameroon",0.2251,0.310219,3,10.5851803473708
+"139","Est","CMR",817,"Cameroon",0.3792,0.376068,2,17.1043551814766
+"140","Extrême - Nord","CMR",818,"Cameroon",0.206,0.447909,3,6.62665780338395
+"141","Littoral","CMR",819,"Cameroon",0.177,0.417402,3,6.18615378008083
+"142","Nord","CMR",820,"Cameroon",0.1979,0.423439,3,6.77646717333389
+"143","Nord - Ouest","CMR",821,"Cameroon",0.2323,0.308843,3,10.9724276188399
+"144","Ouest","CMR",822,"Cameroon",0.2051,0.297307,3,10.1594892918656
+"145","Sud","CMR",823,"Cameroon",0.333,0.335592,2,15.4162569652736
+"146","Sud - Ouest","CMR",824,"Cameroon",0.344,0.399227,2,13.9438733519201
+"147","Alebtong","UGA",852,"Uganda",0.5101,0.355542,1,NA
+"148","Bamingui-bangora","CAF",853,"Central African Republic",0.2293,0.506062,3,6.6031351198369
+"149","Basse Kotto","CAF",854,"Central African Republic",0.5832,0.441381,1,NA
+"150","Haut-mboumou","CAF",855,"Central African Republic",0.4663,0.492922,1,NA
+"151","Hautte-kotto","CAF",856,"Central African Republic",0.3123,0.433082,3,11.1749376387708
+"152","Kemo","CAF",857,"Central African Republic",0.4826,0.439697,1,NA
+"153","Lobaye","CAF",858,"Central African Republic",0.5579,0.414681,1,NA
+"154","Mambere-kadei","CAF",859,"Central African Republic",0.2962,0.431182,3,10.4311202826034
+"155","Mbomou","CAF",860,"Central African Republic",0.475,0.449545,1,NA
+"156","Nana Grebizi","CAF",861,"Central African Republic",0.3133,0.383794,2,12.5570776476796
+"157","Nana Mambere","CAF",862,"Central African Republic",0.266,0.400738,3,9.74721724287679
+"158","Ombella-mpoko","CAF",863,"Central African Republic",0.6466,0.441003,1,NA
+"159","Ouaka","CAF",864,"Central African Republic",0.4822,0.417848,1,NA
+"160","Ouham","CAF",865,"Central African Republic",0.2492,0.45946,3,7.95891760449642
+"161","Ouham-pende","CAF",866,"Central African Republic",0.2042,0.419792,3,7.06365975738134
+"162","Sangha Mbaere","CAF",867,"Central African Republic",0.3864,0.44218,2,15.5401737854157
+"163","Vakaga","CAF",868,"Central African Republic",0.1805,0.434255,4,5.99951122575004
+"164","Biltine","TCD",870,"Chad",0.0456,0.38773,4,3.80122473371194
+"165","Guera","TCD",873,"Chad",0.1088,0.509161,4,2.99328039650466
+"166","Lac","TCD",875,"Chad",0.1074,0.179116,2,13.6570629753586
+"167","Logone Occidental","TCD",876,"Chad",0.1097,0.493761,4,3.13026244291604
+"168","Salamat","TCD",881,"Chad",0.1669,0.509161,4,4.65057706821427
+"169","Anjouan","COM",967,NA,NA,NA,NA,NA
+"170","Moheli","COM",968,NA,NA,NA,NA,NA
+"171","Ngazidja","COM",969,NA,NA,NA,NA,NA
+"172","Bouenza","COG",970,"Congo",0.1631,0.415857,4,5.73589196081754
+"173","Cuvette","COG",971,"Congo",0.2078,0.542633,4,5.49124312498199
+"174","Cuvette Ovest","COG",972,"Congo",0.2314,0.50242,3,6.72142034841273
+"175","Kouilou","COG",973,"Congo",0.1563,0.368574,3,6.34234712821324
+"176","Lekoumou","COG",974,"Congo",0.2147,0.379847,3,8.30861911005054
+"177","Likouala","COG",975,"Congo",0.4563,0.527345,2,18.9471844661961
+"178","Niari","COG",976,"Congo",0.2359,0.415857,3,8.333293910234
+"179","Plateaux","COG",977,"Congo",0.1833,0.505742,4,5.14403098404487
+"180","Pool","COG",978,"Congo",0.1545,0.436533,4,5.14294767504219
+"181","Sangha","COG",979,"Congo",0.2718,0.509027,3,8.01972260465727
+"182","Bas Sassandra","CIV",1040,"Côte d'Ivoire",0.5479,0.395742,1,NA
+"183","Denguele","CIV",1041,"Côte d'Ivoire",0.5662,0.431474,1,NA
+"184","Savanes","CIV",1048,"Côte d'Ivoire",0.547,0.456641,1,NA
+"185","Vallee Du Bandama","CIV",1051,"Côte d'Ivoire",0.6287,0.44815,1,NA
+"186","Zanzan","CIV",1053,"Côte d'Ivoire",0.5003,0.448259,1,NA
+"187","Arua","UGA",1057,"Uganda",0.4455,0.425836,1,NA
+"188","Bandundu","COD",1066,"Democratic Republic of the Congo",0.391,0.384271,2,17.6404168330141
+"189","Bas-Congo","COD",1067,"Democratic Republic of the Congo",0.4748,0.288937,1,NA
+"190","Equateur","COD",1068,"Democratic Republic of the Congo",0.6718,0.433118,1,NA
+"191","Kasai-Occidental","COD",1069,"Democratic Republic of the Congo",0.5918,0.440064,1,NA
+"192","Kasai-Oriental","COD",1070,"Democratic Republic of the Congo",0.4873,0.447741,1,NA
+"193","Katanga","COD",1071,"Democratic Republic of the Congo",0.4904,0.344215,1,NA
+"194","Kinshasa","COD",1072,"Democratic Republic of the Congo",0.2161,0.319983,3,9.88094806122887
+"195","Maniema","COD",1073,"Democratic Republic of the Congo",0.4598,0.341851,1,NA
+"196","Nord-Kivu","COD",1074,"Democratic Republic of the Congo",0.1686,0.341851,3,7.35587610547851
+"197","Province Orientale","COD",1075,"Democratic Republic of the Congo",0.7139,0.413854,1,NA
+"198","Sud-Kivu","COD",1076,"Democratic Republic of the Congo",0.1431,0.341851,3,6.41120424529567
+"199","Bududa","UGA",1080,"Uganda",0.3176,0.470204,3,10.7054643837684
+"200","Buvuma","UGA",1082,"Uganda",0.5107,0.418572,1,NA
+"201","Gomba","UGA",1086,"Uganda",0.4495,0.398838,1,NA
+"202","Gulu","UGA",1089,"Uganda",0.5512,0.355542,1,NA
+"203","Ali Sabieh","DJI",1093,"Djibouti",4e-04,0.224339,3,9.69331622826234
+"204","Dikhil","DJI",1094,"Djibouti",2e-04,0.224339,3,9.69331622826234
+"205","Djibouti","DJI",1095,"Djibouti",1e-04,0.198,3,11.6112842023271
+"206","Obock","DJI",1096,"Djibouti",0.0102,0.224339,3,9.69331622826234
+"207","Tadjourah","DJI",1097,"Djibouti",0.0044,0.224339,3,9.69331622826234
+"208","Al Bahr/al Ahmar (redsea)","EGY",1158,NA,NA,NA,NA,NA
+"209","Al Buhayrah (behera)","EGY",1159,NA,NA,NA,NA,NA
+"210","Al Daqahliyah (dakahlia)","EGY",1160,NA,NA,NA,NA,NA
+"211","Al Fayyum (fayoum)","EGY",1161,NA,NA,NA,NA,NA
+"212","Al Gharbiyah (gharbia)","EGY",1162,NA,NA,NA,NA,NA
+"213","Al Iskandariyah (alex.)","EGY",1163,NA,NA,NA,NA,NA
+"214","Al Jizah (giza)","EGY",1164,NA,NA,NA,NA,NA
+"215","Al Minufiyah (menoufia)","EGY",1165,NA,NA,NA,NA,NA
+"216","Al Minya (menia)","EGY",1166,NA,NA,NA,NA,NA
+"217","Al Qahirah (cairo)","EGY",1167,NA,NA,NA,NA,NA
+"218","Al Qalyubiyah (kalyoubia)","EGY",1168,NA,NA,NA,NA,NA
+"219","Al Wadi/al Jadid","EGY",1169,NA,NA,NA,NA,NA
+"220","As Ismailiyah (ismailia)","EGY",1170,NA,NA,NA,NA,NA
+"221","As Suways (suez)","EGY",1171,NA,NA,NA,NA,NA
+"222","Ash Sharqiyah (sharkia)","EGY",1172,NA,NA,NA,NA,NA
+"223","Aswan","EGY",1173,NA,NA,NA,NA,NA
+"224","Asyiut","EGY",1174,NA,NA,NA,NA,NA
+"225","Beni Suwayf (beni-suef)","EGY",1175,NA,NA,NA,NA,NA
+"226","Bur Said (port Said)","EGY",1176,NA,NA,NA,NA,NA
+"227","Dumyat (damietta)","EGY",1177,NA,NA,NA,NA,NA
+"228","Janub Sina (south Sinai)","EGY",1178,NA,NA,NA,NA,NA
+"229","Kafr-el-sheikh","EGY",1179,NA,NA,NA,NA,NA
+"230","Matruh","EGY",1180,NA,NA,NA,NA,NA
+"231","Qina","EGY",1181,NA,NA,NA,NA,NA
+"232","Shamal Sina (north Sinai)","EGY",1182,NA,NA,NA,NA,NA
+"233","Suhaj","EGY",1183,NA,NA,NA,NA,NA
+"234","Annobon","GNQ",1198,"Equatorial Guinea",NA,NA,NA,NA
+"235","Bioko Norte","GNQ",1199,"Equatorial Guinea",0.15,0.32911,3,6.92519179948588
+"236","Bioko Sur","GNQ",1200,"Equatorial Guinea",0.1271,0.31272,3,6.55468516256409
+"237","Centro Sur","GNQ",1201,"Equatorial Guinea",0.2992,0.405955,3,11.1753620315461
+"238","Kientem","GNQ",1202,"Equatorial Guinea",0.2693,0.490547,3,8.19339498546918
+"239","Litoral","GNQ",1203,"Equatorial Guinea",0.2107,0.488919,3,6.19636657479262
+"240","Welenzas","GNQ",1204,"Equatorial Guinea",0.3485,0.475305,2,12.2867936037341
+"241","Anseba","ERI",1205,"Eritrea",0.0085,0.288937,3,6.13080116123212
+"242","Archipelagos","ERI",1206,"Eritrea",0.0234,NA,NA,NA
+"243","Debub","ERI",1207,"Eritrea",0.0145,0.384271,4,3.86829164895628
+"244","Debubawi Keih Bahri","ERI",1208,"Eritrea",0.0219,0.431474,4,3.13470193127306
+"245","Gash Barka","ERI",1209,"Eritrea",0.0177,0.448259,4,2.94736167986333
+"246","Maekel","ERI",1210,"Eritrea",0.0096,0.384061,4,3.86829164895628
+"247","Semenawi Keih Bahri","ERI",1211,"Eritrea",0.015,0.288937,3,6.13080116123212
+"248","Addis Ababa","ETH",1227,"Ethiopia",2e-04,0.219443,3,10.0080791485836
+"249","Afar","ETH",1228,"Ethiopia",0.005,0.256149,3,7.68840993682328
+"250","Amhara","ETH",1229,"Ethiopia",0.0029,0.0827686,1,NA
+"251","Benishangul Gumuz","ETH",1230,"Ethiopia",0.0084,0.352414,4,4.47777265819675
+"252","Dire Dawa","ETH",1231,"Ethiopia",0.0042,0.309607,4,5.42772265303322
+"253","Gambella","ETH",1232,"Ethiopia",0.01,0.473472,4,2.73168827749435
+"254","Harari","ETH",1233,"Ethiopia",0.0047,0.261819,3,7.38833780973542
+"255","Kiboga","UGA",1234,"Uganda",0.4587,0.418572,1,NA
+"256","Kibuku","UGA",1235,"Uganda",0.6445,0.470204,1,NA
+"257","SNNP","ETH",1236,"Ethiopia",0.0048,0.147943,2,16.0612588721031
+"258","Tigray","ETH",1237,"Ethiopia",0.0035,0.0900476,1,NA
+"259","Kiryandongo","UGA",1241,"Uganda",0.5192,0.380436,1,NA
+"260","Kumi","UGA",1261,"Uganda",0.4446,0.470204,2,19.2656775496306
+"261","Estuaire","GAB",1275,"Gabon",0.13,0.40518,4,4.75651482265831
+"262","Haut-Ogooue","GAB",1276,"Gabon",0.0936,0.403848,4,3.60874880163939
+"263","Moyen-Ogooue","GAB",1277,"Gabon",0.1026,0.411569,4,3.77871348964419
+"264","Ngounie","GAB",1278,"Gabon",0.1241,0.390037,4,4.83023584863497
+"265","Nyanga","GAB",1279,"Gabon",0.1269,0.390037,4,4.92528128359592
+"266","Ogooue-Ivindo","GAB",1280,"Gabon",0.0964,0.395302,4,3.84049705162312
+"267","Ogooue-lolo","GAB",1281,"Gabon",0.0998,0.403848,4,3.80744607504565
+"268","Ogooue-Maritime","GAB",1282,"Gabon",0.0753,0.411569,4,3.40485102312812
+"269","Woleu-Ntem","GAB",1283,"Gabon",0.1441,0.395302,4,5.41574964936357
+"270","Banjul","GMB",1284,"Gambia",0.0291,0.237924,3,8.76403245792654
+"271","Central River","GMB",1285,"Gambia",0.0191,0.324995,4,5.02909195484106
+"272","Kombo Saint Mary","GMB",1286,"Gambia",0.0205,0.237924,3,8.76403245792654
+"273","Lower River","GMB",1287,"Gambia",0.0174,0.324995,4,5.02909195484106
+"274","North Bank","GMB",1288,"Gambia",0.0148,0.304746,4,5.57583802866632
+"275","Upper River","GMB",1289,"Gambia",0.0219,0.318312,4,5.1988976229402
+"276","Western","GMB",1290,"Gambia",0.0271,0.251765,3,7.94410935324166
+"277","Rafah","XXX",1295,NA,NA,NA,NA,NA
+"278","Ashanti","GHA",1324,"Ghana",0.3713,0.378957,2,16.4644512455875
+"279","Brong Ahafo","GHA",1325,"Ghana",0.5519,0.378957,1,NA
+"280","Central","GHA",1326,"Ghana",0.4853,0.378997,1,NA
+"281","Eastern","GHA",1327,"Ghana",0.417,0.370958,1,NA
+"282","Greater Accra","GHA",1328,"Ghana",0.0904,0.342309,4,4.66842384100236
+"283","Northern","GHA",1329,"Ghana",0.6995,0.493651,1,NA
+"284","Upper East","GHA",1330,"Ghana",0.7836,0.532832,1,NA
+"285","Upper West","GHA",1331,"Ghana",0.8088,0.514884,1,NA
+"286","Volta","GHA",1332,"Ghana",0.3718,0.429403,2,14.8668144308913
+"287","Western","GHA",1333,"Ghana",0.4963,0.425332,1,NA
+"288","Kyankwanzi","UGA",1344,"Uganda",0.508,0.418572,1,NA
+"289","Mitooma","UGA",1360,"Uganda",0.1177,0.260009,3,8.3931334373006
+"290","Kyegegwa","UGA",1361,"Uganda",0.4806,0.380436,1,NA
+"291","Kyenjojo","UGA",1362,"Uganda",0.3298,0.380436,2,13.6459895368436
+"292","Mpigi","UGA",1363,"Uganda",0.2159,0.398838,3,7.90467433521608
+"293","Nwoya","UGA",1364,"Uganda",0.5098,0.355542,1,NA
+"294","Serere","UGA",1365,"Uganda",0.4876,0.470204,1,NA
+"295","Lwengo","UGA",1366,"Uganda",0.3935,0.398838,2,17.3542922733786
+"296","Mukono","UGA",1367,"Uganda",0.296,0.418572,3,10.6922476122014
+"297","Namayingo","UGA",1368,"Uganda",0.6159,NA,NA,NA
+"298","Pallisa","UGA",1369,"Uganda",0.5657,0.470204,1,NA
+"299","Lira","UGA",1370,"Uganda",0.5791,0.355542,1,NA
+"300","Rakai","UGA",1371,"Uganda",0.363,0.398838,2,15.2115661356228
+"301","Lyantonde","UGA",1372,"Uganda",0.3491,0.398838,2,14.2768160365879
+"302","Kaolack","SEN",1373,"Senegal",0.0586,0.299054,4,5.75184569943109
+"303","Kedougou","SEN",1374,"Senegal",0.2075,0.407139,3,7.43481131303307
+"304","Kolda","SEN",1375,"Senegal",0.1035,0.321187,4,5.53921218959784
+"305","Sedhiou","SEN",1376,"Senegal",0.0584,0.321187,4,5.12425355282837
+"306","Tambacounda","SEN",1377,"Senegal",0.1435,0.407139,4,5.18951895524425
+"307","Kaffrine","SEN",1378,"Senegal",0.0824,0.299054,4,5.75184569943109
+"308","Bafata","GNB",1385,"Guinea-Bissau",0.0679,0.337427,4,4.76847660541367
+"309","Biombo","GNB",1386,"Guinea-Bissau",0.0532,0.307978,4,5.47103356627485
+"310","Bolama/bijagos","GNB",1387,"Guinea-Bissau",0.0139,NA,NA,NA
+"311","Cacheu","GNB",1388,"Guinea-Bissau",0.0365,0.307978,4,5.47103356627485
+"312","Gabu","GNB",1389,"Guinea-Bissau",0.1479,0.337427,3,6.66208547689538
+"313","Oio","GNB",1390,"Guinea-Bissau",0.0524,0.307978,4,5.47103356627485
+"314","Quinara","GNB",1391,"Guinea-Bissau",0.0547,0.347859,4,4.56236575518496
+"315","Sector Autonomo De Bissau","GNB",1392,"Guinea-Bissau",0.0388,NA,NA,NA
+"316","Tombali","GNB",1393,"Guinea-Bissau",0.0609,0.347859,4,4.56236575518496
+"317","Southern District","ISR",1614,NA,NA,NA,NA,NA
+"318","Berea","LSO",1803,NA,NA,NA,NA,NA
+"319","Butha Buthe","LSO",1804,NA,NA,NA,NA,NA
+"320","Leribe","LSO",1805,NA,NA,NA,NA,NA
+"321","Mafeteng","LSO",1806,NA,NA,NA,NA,NA
+"322","Maseru","LSO",1807,NA,NA,NA,NA,NA
+"323","Mohale's Hoek","LSO",1808,NA,NA,NA,NA,NA
+"324","Mokhotlong","LSO",1809,NA,NA,NA,NA,NA
+"325","Qacha's Nek","LSO",1810,NA,NA,NA,NA,NA
+"326","Quthing","LSO",1811,NA,NA,NA,NA,NA
+"327","Thaba Tseka","LSO",1812,NA,NA,NA,NA,NA
+"328","Bomi","LBR",1814,"Liberia",0.2353,0.458448,3,7.52104308932758
+"329","Bong","LBR",1815,"Liberia",0.3824,0.413016,2,16.0838098327108
+"330","Gbarpolu","LBR",1816,"Liberia",0.3406,0.461396,2,12.1309019966743
+"331","Grand Bassa","LBR",1817,"Liberia",0.2965,0.411387,3,10.8956843478392
+"332","Grand Cape Mount","LBR",1818,"Liberia",0.3111,0.439603,3,10.991225115404
+"333","Grand Gedeh","LBR",1819,"Liberia",0.3892,0.463339,2,15.2054400238351
+"334","Grand Kru","LBR",1820,"Liberia",0.45,0.434978,1,NA
+"335","Lofa","LBR",1821,"Liberia",0.3739,0.42499,2,15.1353930159603
+"336","Margibi","LBR",1822,"Liberia",0.1975,0.426933,3,6.68995050023783
+"337","Maryland","LBR",1823,"Liberia",0.4248,0.40484,2,19.565390852443
+"338","Montserrado","LBR",1824,"Liberia",0.127,0.414674,4,4.51341590713622
+"339","Nimba","LBR",1825,"Liberia",0.4358,0.419017,2,19.9750261099934
+"340","Rivercess","LBR",1826,"Liberia",0.3031,0.431215,3,10.7380972045077
+"341","River Ghee","LBR",1827,"Liberia",0.4253,0.444006,2,18.4225485765258
+"342","Sinoe","LBR",1828,"Liberia",0.385,0.45406,2,15.1414501386422
+"343","Ajdabiya (agedabia)","LBY",1829,NA,NA,NA,NA,NA
+"344","Al Aziziyah","LBY",1830,NA,NA,NA,NA,NA
+"345","Al Fatah","LBY",1831,NA,NA,NA,NA,NA
+"346","Al Jabal Al Akhdar","LBY",1832,NA,NA,NA,NA,NA
+"347","Al Jufrah","LBY",1833,NA,NA,NA,NA,NA
+"348","Al Khoms","LBY",1834,NA,NA,NA,NA,NA
+"349","Al Kufrah","LBY",1835,NA,NA,NA,NA,NA
+"350","Ash Shati","LBY",1836,NA,NA,NA,NA,NA
+"351","Awbari (ubari)","LBY",1837,NA,NA,NA,NA,NA
+"352","Az Zawia (azzawiya)","LBY",1838,NA,NA,NA,NA,NA
+"353","Banghazi","LBY",1839,NA,NA,NA,NA,NA
+"354","Darnah","LBY",1840,NA,NA,NA,NA,NA
+"355","Ghadamis","LBY",1841,NA,NA,NA,NA,NA
+"356","Gharyan","LBY",1842,NA,NA,NA,NA,NA
+"357","Misurata","LBY",1843,NA,NA,NA,NA,NA
+"358","Murzuq","LBY",1844,NA,NA,NA,NA,NA
+"359","Nuqat Al Khams","LBY",1845,NA,NA,NA,NA,NA
+"360","Sabha","LBY",1846,NA,NA,NA,NA,NA
+"361","Sawfajjin (sofuljeen)","LBY",1847,NA,NA,NA,NA,NA
+"362","Surt (sirte)","LBY",1848,NA,NA,NA,NA,NA
+"363","Tarhunah","LBY",1849,NA,NA,NA,NA,NA
+"364","Tripoli (tarabulus)","LBY",1850,NA,NA,NA,NA,NA
+"365","Tubruq (tobruk)","LBY",1851,NA,NA,NA,NA,NA
+"366","Yafran (yefren)","LBY",1852,NA,NA,NA,NA,NA
+"367","Zeleitin (zliten)","LBY",1853,NA,NA,NA,NA,NA
+"368","Central Region","MWI",1888,"Malawi",0.4194,0.24581,1,NA
+"369","Northern Region","MWI",1889,"Malawi",0.1666,0.34911,3,7.11618996643939
+"370","Southern Region","MWI",1890,"Malawi",0.3515,0.293193,2,18.7976186299868
+"371","Bamako","MLI",1926,"Mali",0.0514,0.442222,4,3.00938296508671
+"372","Gao","MLI",1927,"Mali",0.1598,0.35229,3,6.79057790194674
+"373","Kayes","MLI",1928,"Mali",0.2341,0.379492,3,9.07242590272015
+"374","Kidal","MLI",1929,"Mali",0.0245,0.279426,3,6.52889285728344
+"375","Koulikoro","MLI",1930,"Mali",0.2489,0.408068,3,8.95614545559962
+"376","Mopti","MLI",1931,"Mali",0.4399,0.410997,1,NA
+"377","Segou","MLI",1932,"Mali",0.4274,0.41527,2,19.4501670692943
+"378","Sikasso","MLI",1933,"Mali",0.5157,0.455053,1,NA
+"379","Tombouctou","MLI",1934,"Mali",0.1848,0.239011,2,12.2301515758239
+"380","Adrar","MRT",2004,"Mauritania",0,NA,NA,NA
+"381","Assaba","MRT",2005,"Mauritania",0.0388,0.300856,4,5.70240975585053
+"382","Brakna","MRT",2006,"Mauritania",0.0397,0.297098,4,5.81950585138533
+"383","Dakhlet Nouadhibou","MRT",2007,"Mauritania",0,NA,NA,NA
+"384","Gorgol","MRT",2008,"Mauritania",0.0242,0.334359,4,4.83061945387472
+"385","Guidimaka","MRT",2009,"Mauritania",0.0344,0.356484,4,4.40356773791986
+"386","Hodh Ech Chargui","MRT",2010,"Mauritania",0.0643,0.311346,4,5.38533438768547
+"387","Hodh El Gharbi","MRT",2011,"Mauritania",0.0525,0.34558,4,4.60052992033875
+"388","Inchiri","MRT",2012,"Mauritania",0,NA,NA,NA
+"389","Nouakchott","MRT",2013,"Mauritania",0.0194,0.167594,2,14.1626167033181
+"390","Tagant","MRT",2014,"Mauritania",0.0349,0.300856,4,5.70240975585053
+"391","Tiris Zemmour","MRT",2015,"Mauritania",0,NA,NA,NA
+"392","Trarza","MRT",2016,"Mauritania",0.0256,0.23528,3,8.95660160144078
+"393","Administrative unit not available","MYT",2027,NA,NA,NA,NA,NA
+"394","Centre","MAR",2105,NA,NA,NA,NA,NA
+"395","Centre Nord","MAR",2106,NA,NA,NA,NA,NA
+"396","Centre Sud","MAR",2107,NA,NA,NA,NA,NA
+"397","Nord Ouest","MAR",2108,NA,NA,NA,NA,NA
+"398","Oriental","MAR",2109,NA,NA,NA,NA,NA
+"399","Sud","MAR",2110,NA,NA,NA,NA,NA
+"400","Tensift","MAR",2111,NA,NA,NA,NA,NA
+"401","Cabo Delgado","MOZ",2112,"Mozambique",0.3857,0.42342,2,16.0220092106913
+"402","Gaza","MOZ",2113,"Mozambique",0.1001,0.286263,3,6.53994002040834
+"403","Inhambane","MOZ",2114,"Mozambique",0.2785,0.293877,2,13.9539344035417
+"404","Manica","MOZ",2115,"Mozambique",0.2948,0.251063,2,17.3277766209162
+"405","Maputo","MOZ",2116,"Mozambique",0.073,0.243785,3,8.42063456350207
+"406","Maputo (city)","MOZ",2117,"Mozambique",0.0668,NA,NA,NA
+"407","Nampula","MOZ",2118,"Mozambique",0.4774,0.383996,1,NA
+"408","Niassa","MOZ",2119,"Mozambique",0.3935,0.34911,2,19.2013299905577
+"409","Sofala","MOZ",2120,"Mozambique",0.303,0.339679,2,13.3905409085514
+"410","Tete","MOZ",2121,"Mozambique",0.3375,0.251063,1,NA
+"411","Zambezia","MOZ",2122,"Mozambique",0.5222,0.35062,1,NA
+"412","Caprivi","NAM",2137,"Namibia",0.0254,0.339851,4,4.7179480574503
+"413","Erongo","NAM",2138,"Namibia",1e-04,NA,NA,NA
+"414","Hardap","NAM",2139,"Namibia",0,0.198,3,11.6112842023271
+"415","Karas","NAM",2140,"Namibia",0,NA,NA,NA
+"416","Kavango","NAM",2141,"Namibia",0.0348,0.370639,4,4.13382978170608
+"417","Khomas","NAM",2142,"Namibia",0,0.171892,2,13.7569899773122
+"418","Kunene","NAM",2143,"Namibia",0.049,0.159323,2,14.9628075576078
+"419","Ohangwena","NAM",2144,"Namibia",0.0553,0.424617,4,3.21626020299181
+"420","Omaheke","NAM",2145,"Namibia",0.0288,0.251065,3,7.97307626511147
+"421","Omusati","NAM",2146,"Namibia",0.0755,0.352921,4,4.46845826393097
+"422","Oshana","NAM",2147,"Namibia",0.0457,0.389284,4,3.77314655096903
+"423","Oshikoto","NAM",2148,"Namibia",0.0552,0.410525,4,3.41990219579688
+"424","Otjozondjupa","NAM",2149,"Namibia",0.0498,0.289771,3,6.09208454382932
+"425","Agadez","NER",2202,"Niger",0.0763,0.197565,3,11.6504115904714
+"426","Diffa","NER",2203,"Niger",0.1549,0.281441,3,8.73919670245842
+"427","Dosso","NER",2204,"Niger",0.3644,0.421283,2,14.6273795990395
+"428","Maradi","NER",2205,"Niger",0.3666,0.34884,2,17.2673077552544
+"429","Niamey","NER",2206,"Niger",0.2295,0.42699,3,7.88110744489099
+"430","Tahoua","NER",2207,"Niger",0.2834,0.342478,2,12.2505378566021
+"431","Tillaberi","NER",2208,"Niger",0.3197,0.389362,2,12.7638173984525
+"432","Zinder","NER",2209,"Niger",0.2288,0.321302,3,10.410906883455
+"433","Adamawa","NGA",2211,"Nigeria",0.2697,0.440827,3,9.01739167868472
+"434","Akwa Ibom","NGA",2212,"Nigeria",0.3302,0.49256,3,10.9800963027513
+"435","Anambra","NGA",2213,"Nigeria",0.1449,0.447218,4,4.6715984314377
+"436","Benue","NGA",2215,"Nigeria",0.4165,0.490761,2,16.5298760798188
+"437","Borno","NGA",2216,"Nigeria",0.2311,0.356218,3,9.52282648642478
+"438","Cross River","NGA",2217,"Nigeria",0.4192,0.492268,2,16.7116558147645
+"439","Delta","NGA",2218,"Nigeria",0.2018,0.43218,3,6.7397878007254
+"440","Edo","NGA",2219,"Nigeria",0.3711,0.397836,2,15.7678936796955
+"441","FCT, Abuja","NGA",2221,"Nigeria",0.2642,0.45934,3,8.47116369493391
+"442","Imo","NGA",2222,"Nigeria",0.3197,0.46841,3,10.8567961893847
+"443","Jigawa","NGA",2223,"Nigeria",0.3021,0.405288,3,11.3318527673694
+"444","Kaduna","NGA",2224,"Nigeria",0.3384,0.389863,2,13.8791002484906
+"445","Kano","NGA",2225,"Nigeria",0.2795,0.387205,3,10.672153463486
+"446","Katsina","NGA",2226,"Nigeria",0.4283,0.366459,1,NA
+"447","Kebbi","NGA",2227,"Nigeria",0.5364,0.455715,1,NA
+"448","Kogi","NGA",2228,"Nigeria",0.3982,0.410376,2,17.2980996135147
+"449","Kwara","NGA",2229,"Nigeria",0.4887,0.396747,1,NA
+"450","Lagos","NGA",2230,"Nigeria",0.0943,0.397876,4,3.73086069282113
+"451","Niger","NGA",2231,"Nigeria",0.4678,0.45472,1,NA
+"452","Ogun","NGA",2232,"Nigeria",0.3449,0.414417,2,13.5478926326395
+"453","Osun","NGA",2234,"Nigeria",0.4667,0.389561,1,NA
+"454","Oyo","NGA",2235,"Nigeria",0.4602,0.396747,1,NA
+"455","Taraba","NGA",2239,"Nigeria",0.3317,0.481301,3,11.2558871312403
+"456","Yobe","NGA",2240,"Nigeria",0.3034,0.351926,2,13.0152270576066
+"457","Principe","STP",2620,NA,NA,NA,NA,NA
+"458","Sao Tome","STP",2621,NA,NA,NA,NA,NA
+"459","Dakar","SEN",2636,"Senegal",0.0305,0.172819,2,13.7127100771716
+"460","Thies","SEN",2644,"Senegal",0.0428,0.205266,3,11.072009081774
+"461","Ziguinchor","SEN",2645,"Senegal",0.0738,0.269605,3,6.97705703156743
+"462","Eastern","SLE",2654,"Sierra Leone",0.5871,0.406389,1,NA
+"463","Northern","SLE",2655,"Sierra Leone",0.6159,0.493651,1,NA
+"464","Southern","SLE",2656,"Sierra Leone",0.5405,0.437508,1,NA
+"465","Western Area","SLE",2657,"Sierra Leone",0.2772,NA,NA,NA
+"466","Awdal","SOM",2688,"Somalia",0.0121,0.300157,4,5.71876579892264
+"467","Bakool","SOM",2689,"Somalia",0.0121,0.403419,4,3.52963621279858
+"468","Bari","SOM",2690,"Somalia",0.0202,0.268396,3,7.05185364150503
+"469","Bay","SOM",2691,"Somalia",0.013,0.410351,4,3.41990219579688
+"470","Banadir","SOM",2692,"Somalia",0.0032,0.385302,4,3.84890642629573
+"471","Galgaduud","SOM",2693,"Somalia",0.0188,0.403039,4,3.53777264942586
+"472","Gedo","SOM",2694,"Somalia",0.0118,0.459061,4,2.84879612819335
+"473","Hiraan","SOM",2695,"Somalia",0.0222,0.455736,4,2.87571290566249
+"474","Juba Hoose","SOM",2696,"Somalia",0.0277,0.442008,4,3.01474759888895
+"475","Shabelle Hoose","SOM",2697,"Somalia",0.006,0.394917,4,3.67353892446356
+"476","Juba Dhexe","SOM",2698,"Somalia",0.0205,0.44107,4,3.02556927716421
+"477","Shabelle Dhexe","SOM",2699,"Somalia",0.0081,0.415536,4,3.34616944356987
+"478","Mudug","SOM",2700,"Somalia",0.0174,0.330423,4,4.91640513562395
+"479","Nugaal","SOM",2701,"Somalia",0.0315,0.256899,3,7.66056000231385
+"480","Sanaag","SOM",2702,"Somalia",0.014,0.128025,2,18.2255177344963
+"481","Sool","SOM",2703,"Somalia",0.0247,0.128025,2,18.2255177344963
+"482","Togdheer","SOM",2704,"Somalia",0.0285,0.223345,3,9.76260818753398
+"483","Woqooyi Galbeed","SOM",2705,"Somalia",0.0149,0.151436,2,15.7043060294291
+"484","Ceuta, Ciudad Autonoma De","ESP",2725,NA,NA,NA,NA,NA
+"485","Melilla, Ciudad Autonoma De","ESP",2730,NA,NA,NA,NA,NA
+"486","Al Jazeera","SDN",2745,"Sudan",0.0117,0.447178,4,2.95740127117285
+"487","El Buheyrat","SSD",2746,"South Sudan",0.1396,0.476052,4,4.19516609388048
+"488","Unity","SSD",2747,"South Sudan",0.0672,0.516144,4,2.48842342035781
+"489","Central Equatoria","SSD",2748,"South Sudan",0.3737,0.502464,2,13.3098630898763
+"490","Blue Nile","SDN",2749,"Sudan",0.0595,0.447178,4,2.95740127117285
+"491","Eastern Equatoria","SSD",2750,"South Sudan",0.2012,0.502464,4,5.73376496091915
+"492","Jonglei","SSD",2751,"South Sudan",0.0976,0.516144,4,2.66709739052357
+"493","Khartoum","SDN",2753,"Sudan",0.0046,0.346703,4,4.5813965847209
+"494","Northern Bahr El Ghazal","SSD",2754,"South Sudan",0.0711,0.476052,4,2.71353239348926
+"495","Northern","SDN",2755,"Sudan",0.0043,0.25515,3,7.74444847597628
+"496","Northern Darfur","SDN",2757,"Sudan",0.0133,0.340859,4,4.69802512445934
+"497","Nile","SDN",2761,"Sudan",0.0078,0.25515,3,7.74444847597628
+"498","Sennar","SDN",2762,"Sudan",0.0152,0.447178,4,2.95740127117285
+"499","Southern Darfur","SDN",2764,"Sudan",0.0223,0.340859,4,4.69802512445934
+"500","Warab","SSD",2765,"South Sudan",0.0907,0.476052,4,2.71353239348926
+"501","Western Bahr El Ghazal","SSD",2766,"South Sudan",0.1497,0.476052,4,4.50018597047213
+"502","Western Equatoria","SSD",2768,"South Sudan",0.3802,0.502464,2,13.7248388067844
+"503","Western Darfur","SDN",2769,"Sudan",0.0348,0.340859,4,4.69802512445934
+"504","White Nile","SDN",2770,"Sudan",0.0137,0.447178,4,2.95740127117285
+"505","Hhohho","SWZ",2782,"Swaziland",4e-04,0.148951,2,15.9585783114319
+"506","Lubombo","SWZ",2783,"Swaziland",0.001,0.20817,3,10.8458732510899
+"507","Manzini","SWZ",2784,"Swaziland",0,NA,NA,NA
+"508","Shiselweni","SWZ",2785,"Swaziland",0,NA,NA,NA
+"509","Centrale","TGO",2970,"Togo",0.6127,0.425255,1,NA
+"510","Kara","TGO",2971,"Togo",0.8108,0.469391,1,NA
+"511","Maritime","TGO",2972,"Togo",0.3123,0.380707,2,12.568451816241
+"512","Plateaux","TGO",2973,"Togo",0.4726,0.521829,1,NA
+"513","Savanes","TGO",2974,"Togo",0.8833,0.388392,1,NA
+"514","Ariana","TUN",2993,NA,NA,NA,NA,NA
+"515","Ben Arous","TUN",2994,NA,NA,NA,NA,NA
+"516","Bizerte","TUN",2995,NA,NA,NA,NA,NA
+"517","Beja","TUN",2996,NA,NA,NA,NA,NA
+"518","Gabes","TUN",2997,NA,NA,NA,NA,NA
+"519","Gafsa","TUN",2998,NA,NA,NA,NA,NA
+"520","Jendouba","TUN",2999,NA,NA,NA,NA,NA
+"521","Kairouan","TUN",3000,NA,NA,NA,NA,NA
+"522","Kasserine","TUN",3001,NA,NA,NA,NA,NA
+"523","Kebili","TUN",3002,NA,NA,NA,NA,NA
+"524","Le Kef","TUN",3003,NA,NA,NA,NA,NA
+"525","Mahdia","TUN",3004,NA,NA,NA,NA,NA
+"526","Manouba","TUN",3005,NA,NA,NA,NA,NA
+"527","Monastir","TUN",3006,NA,NA,NA,NA,NA
+"528","Medenine","TUN",3007,NA,NA,NA,NA,NA
+"529","Nabeul","TUN",3008,NA,NA,NA,NA,NA
+"530","Sfax","TUN",3009,NA,NA,NA,NA,NA
+"531","Sidi Bouz","TUN",3010,NA,NA,NA,NA,NA
+"532","Siliana","TUN",3011,NA,NA,NA,NA,NA
+"533","Sousse","TUN",3012,NA,NA,NA,NA,NA
+"534","Tataouine","TUN",3013,NA,NA,NA,NA,NA
+"535","Tozeur","TUN",3014,NA,NA,NA,NA,NA
+"536","Tunis","TUN",3015,NA,NA,NA,NA,NA
+"537","Zaghouan","TUN",3016,NA,NA,NA,NA,NA
+"538","Adjumani","UGA",3104,"Uganda",0.4234,0.425836,2,18.7810043655641
+"539","Busia","UGA",3110,"Uganda",0.6426,0.4572,1,NA
+"540","Hoima","UGA",3112,"Uganda",0.475,0.380436,1,NA
+"541","Jinja","UGA",3114,"Uganda",0.5543,0.4572,1,NA
+"542","Kabale","UGA",3115,"Uganda",0.004,0.260009,3,7.46879808971433
+"543","Kalangala","UGA",3117,"Uganda",0.1368,0.418572,4,4.7989501338403
+"544","Kasese","UGA",3121,"Uganda",0.141,0.380436,4,5.59035675583243
+"545","Kibaale","UGA",3123,"Uganda",0.4593,0.380436,1,NA
+"546","Kisoro","UGA",3125,"Uganda",0.0052,0.260009,3,7.46879808971433
+"547","Moyo","UGA",3136,"Uganda",0.4029,0.425836,2,17.1945197182021
+"548","Ntungamo","UGA",3141,"Uganda",0.0869,0.260009,3,7.46879808971433
+"549","Ssembabule","UGA",3145,"Uganda",0.4926,0.398838,1,NA
+"550","Rio De Oro","ESH",3405,NA,NA,NA,NA,NA
+"551","Saguia El Hamra","ESH",3406,NA,NA,NA,NA,NA
+"552","Central","ZMB",3426,"Zambia",0.0995,0.176387,2,13.6232248081933
+"553","Copperbelt","ZMB",3427,"Zambia",0.0814,0.285798,3,6.25049202280609
+"554","Eastern","ZMB",3428,"Zambia",0.1867,0.294285,3,9.47499716863654
+"555","Luapula","ZMB",3429,"Zambia",0.4047,0.348831,1,NA
+"556","Lusaka","ZMB",3430,"Zambia",0.0256,0.204785,3,11.1099933481155
+"557","North-Western","ZMB",3431,"Zambia",0.1198,0.311108,3,6.3541098801558
+"558","Northern","ZMB",3432,"Zambia",0.1446,0.248939,3,9.99388197158257
+"559","Southern","ZMB",3433,"Zambia",0.0554,0.183405,2,12.7772120445896
+"560","Western","ZMB",3434,"Zambia",0.0592,0.319109,4,5.17368793933121
+"561","Bulawayo","ZWE",3435,"Zimbabwe",0.0118,0.190859,2,12.2064128915639
+"562","Harare","ZWE",3436,"Zimbabwe",0.0103,0.188528,2,12.3680227174557
+"563","Manicaland","ZWE",3437,"Zimbabwe",0.0344,0.0930457,1,NA
+"564","Mashonaland Central","ZWE",3438,"Zimbabwe",0.0185,0.144559,2,16.4249467860351
+"565","Mashonaland West","ZWE",3440,"Zimbabwe",0.0262,0.163519,2,14.533729732777
+"566","Masvingo","ZWE",3441,"Zimbabwe",0.0229,0.151525,2,15.7043060294291
+"567","Matabeleland South","ZWE",3443,"Zimbabwe",0.0127,0.120465,2,19.0879070995776
+"568","Midlands","ZWE",3444,"Zimbabwe",0.0253,0.164394,2,14.4400336330176
+"569","Southern Kordofan","SDN",4150,"Sudan",0.017,0.390642,4,3.74546240108232
+"570","Batha Est","TCD",12904,"Chad",0.0916,0.509161,4,2.53795378476647
+"571","Batha Ouest","TCD",12905,"Chad",0.0806,0.509161,4,2.52028853271636
+"572","Borkou","TCD",12907,"Chad",0.0043,0.179116,2,13.1517600114989
+"573","Ennedi","TCD",12908,"Chad",0.0154,0.179116,2,13.1517600114989
+"574","Tibesti","TCD",12909,"Chad",4e-04,0.179116,2,13.1517600114989
+"575","Baguirmi","TCD",12910,"Chad",0.1008,0.481453,4,2.95086519072495
+"576","Daraba","TCD",12911,"Chad",0.1029,0.481453,4,3.01233371558399
+"577","Hadjer Lamis","TCD",12912,"Chad",0.0937,0.447909,4,3.03467254440505
+"578","Barl El Gazal","TCD",12914,"Chad",0.0801,0.179116,2,13.1517600114989
+"579","Kanem","TCD",12915,"Chad",0.0741,0.179116,2,13.1517600114989
+"580","Logone Oriental","TCD",12918,"Chad",0.1217,0.493761,4,3.490375262038
+"581","Mont De Lam","TCD",12919,"Chad",0.2006,0.493761,4,5.81470519061372
+"582","Kabia","TCD",12920,"Chad",0.1693,0.477541,4,5.07627897628824
+"583","Mayo-Boneye","TCD",12921,"Chad",0.124,0.477541,4,3.69223786609116
+"584","Mayo-Dala","TCD",12922,"Chad",0.1724,0.477541,4,5.16053310526839
+"585","Barh Koh","TCD",12923,"Chad",0.1292,0.514434,4,3.54874186731598
+"586","Lac Iro","TCD",12924,"Chad",0.1722,0.514434,4,4.75375104213983
+"587","Mandoul","TCD",12925,"Chad",0.1217,0.514434,4,3.34409609524738
+"588","Assongha","TCD",12926,"Chad",0.0675,0.38773,4,3.80122473371194
+"589","Ouaddai","TCD",12927,"Chad",0.0994,0.38773,4,4.06588063473286
+"590","Sila","TCD",12928,"Chad",0.1535,0.38773,4,5.87820433999571
+"591","Tandjile Est","TCD",12930,"Chad",0.06,0.493761,4,2.59834455070763
+"592","Tandjile Ouest","TCD",12931,"Chad",0.0937,0.493761,4,2.67254139095012
+"593","Comoe","CIV",16837,"Côte d'Ivoire",0.5781,0.384061,1,NA
+"594","District Autonome de Yamoussoukro","CIV",16838,"Côte d'Ivoire",0.3842,0.384061,2,17.1742834534127
+"595","District autonome de yamoussoukro","CIV",16839,"Côte d'Ivoire",0.629,0.425795,1,NA
+"596","Gôh-Djiboua","CIV",16840,"Côte d'Ivoire",0.5748,0.384061,1,NA
+"597","Lacs","CIV",16841,"Côte d'Ivoire",0.6261,0.425795,1,NA
+"598","Lagunes","CIV",16842,"Côte d'Ivoire",0.5913,0.384061,1,NA
+"599","Montagnes","CIV",16843,"Côte d'Ivoire",0.5314,0.376557,1,NA
+"600","Sassandra-Marahoue","CIV",16844,"Côte d'Ivoire",0.591,0.393769,1,NA
+"601","Woroba","CIV",16845,"Côte d'Ivoire",0.5414,0.431474,1,NA
+"602","East/Iburasirazuba","RWA",21969,"Rwanda",0.0425,0.317862,4,5.21162922401912
+"603","Kigali City/Umujyi wa Kigali","RWA",21970,"Rwanda",0.0126,0.331436,4,4.89462000465342
+"604","North/Amajyaruguru","RWA",21971,"Rwanda",0.0115,0.317862,4,5.21162922401912
+"605","South/Amajyepfo","RWA",21972,"Rwanda",0.0256,0.257155,3,7.63282333938792
+"606","West/Iburengerazuba","RWA",21973,"Rwanda",0.0137,0.157566,2,15.1085029293087
+"607","Upper Nile","SSD",37021,"South Sudan",0.0619,0.516144,4,2.48842342035781
+"608","Boucle Du Mouhoun","BFA",40276,"Burkina Faso",0.7862,0.512208,1,NA
+"609","Cascades","BFA",40277,"Burkina Faso",0.6201,0.49566,1,NA
+"610","Centre","BFA",40278,"Burkina Faso",0.3092,0.479632,3,10.1045597634592
+"611","Centre-est","BFA",40279,"Burkina Faso",0.7024,0.508988,1,NA
+"612","Centre-nord","BFA",40280,"Burkina Faso",0.7181,0.495004,1,NA
+"613","Centre-ouest","BFA",40281,"Burkina Faso",0.7718,0.517015,1,NA
+"614","Centre-sud","BFA",40282,"Burkina Faso",0.7061,0.510622,1,NA
+"615","Est","BFA",40283,"Burkina Faso",0.7377,0.490893,1,NA
+"616","Hauts-bassins","BFA",40284,"Burkina Faso",0.5966,0.478686,1,NA
+"617","Nord","BFA",40285,"Burkina Faso",0.6557,0.502293,1,NA
+"618","Plateau Central","BFA",40286,"Burkina Faso",0.6375,0.514228,1,NA
+"619","Sahel","BFA",40287,"Burkina Faso",0.7633,0.461836,1,NA
+"620","Sud-ouest","BFA",40288,"Burkina Faso",0.8291,0.510915,1,NA
+"621","Bubanza","BDI",40542,"Burundi",0.0914,0.393596,4,3.71312797552797
+"622","Bujumbura-Mairie","BDI",40543,"Burundi",0.0727,0.254236,3,7.80093666761426
+"623","Bujumbura-Rural","BDI",40544,"Burundi",0.0668,0.254236,3,7.80093666761426
+"624","Bururi","BDI",40545,"Burundi",0.0717,0.201275,3,11.3782055115262
+"625","Cankuzo","BDI",40546,"Burundi",0.4127,0.312664,1,NA
+"626","Cibitoke","BDI",40547,"Burundi",0.097,0.269873,3,7.191208502865
+"627","Gitega","BDI",40548,"Burundi",0.1201,0.235428,3,9.89131572755976
+"628","Karuzi","BDI",40549,"Burundi",0.2405,0.283019,2,12.4755254194871
+"629","Kayanza","BDI",40550,"Burundi",0.0945,0.304621,4,5.69274635039472
+"630","Kirundo","BDI",40551,"Burundi",0.1927,0.348363,3,8.15397847830029
+"631","Makamba","BDI",40552,"Burundi",0.1763,0.29992,3,8.84973962720199
+"632","Muramvya","BDI",40553,"Burundi",0.0601,0.270359,3,6.95236586989542
+"633","Muyinga","BDI",40554,"Burundi",0.2827,0.314123,2,13.2656841762247
+"634","Mwaro","BDI",40555,"Burundi",0.0477,0.214898,3,10.3303018595951
+"635","Ngozi","BDI",40556,"Burundi",0.1871,0.3046,3,9.11048304658365
+"636","Rutana","BDI",40557,"Burundi",0.2051,0.274263,3,11.2178425847446
+"637","Ruyigi","BDI",40558,"Burundi",0.2985,0.307095,2,14.4414810829176
+"638","Boke","GIN",40700,"Guinea",0.3008,0.384048,3,11.8537116191336
+"639","Conakry","GIN",40701,"Guinea",0.1277,0.433187,4,4.28068701167908
+"640","Faranah","GIN",40702,"Guinea",0.5439,0.336077,1,NA
+"641","Kankan","GIN",40703,"Guinea",0.4889,0.398412,1,NA
+"642","Kindia","GIN",40704,"Guinea",0.4558,0.380854,1,NA
+"643","Labe","GIN",40705,"Guinea",0.3339,0.279961,2,18.1545849703319
+"644","Mamou","GIN",40706,"Guinea",0.3871,0.275093,1,NA
+"645","N'Zerekore","GIN",40707,"Guinea",0.6109,0.339739,1,NA
+"646","Red Sea","SDN",40772,"Sudan",0.0107,0.368735,4,4.17167593882654
+"647","Administrative unit not available","SDN",40776,"Sudan",1e-04,0.368735,4,4.17167593882654
+"648","Administrative unit not available","SDN",40777,"Sudan",0.0011,NA,NA,NA
+"649","Alaotra Mangoro","MDG",41750,"Madagascar",0.0638,0.198,3,11.6112842023271
+"650","Amoron'i Mania","MDG",41751,"Madagascar",0.0298,0.198,3,11.6112842023271
+"651","Analamanga","MDG",41752,"Madagascar",0.0324,0.198,3,11.6112842023271
+"652","Analanjirofo","MDG",41753,"Madagascar",0.0846,0.198,3,11.6112842023271
+"653","Androy","MDG",41754,"Madagascar",0.0301,0.198,3,11.6112842023271
+"654","Anosy","MDG",41755,"Madagascar",0.0516,0.198,3,11.6112842023271
+"655","Atsimo Andrefana","MDG",41756,"Madagascar",0.0237,0.198,3,11.6112842023271
+"656","Atsimo Atsinanana","MDG",41757,"Madagascar",0.1285,0.198,2,12.8216493249169
+"657","Atsinanana","MDG",41758,"Madagascar",0.1546,0.198,2,13.7860485529366
+"658","Betsiboka","MDG",41759,"Madagascar",0.0703,0.198,3,11.6112842023271
+"659","Boeny","MDG",41760,"Madagascar",0.0598,0.198,3,11.6112842023271
+"660","Bongolava","MDG",41761,"Madagascar",0.0335,0.198,3,11.6112842023271
+"661","Diana","MDG",41762,"Madagascar",0.0391,0.198,3,11.6112842023271
+"662","Haute Matsiatra","MDG",41763,"Madagascar",0.0295,0.198,3,11.6112842023271
+"663","Ihorombe","MDG",41764,"Madagascar",0.0402,0.198,3,11.6112842023271
+"664","Itasy","MDG",41765,"Madagascar",0.0267,0.198,3,11.6112842023271
+"665","Melaky","MDG",41766,"Madagascar",0.0577,0.198,3,11.6112842023271
+"666","Menabe","MDG",41767,"Madagascar",0.0411,0.198,3,11.6112842023271
+"667","Sava","MDG",41768,"Madagascar",0.0751,0.198,3,11.6112842023271
+"668","Sofia","MDG",41769,"Madagascar",0.066,0.198,3,11.6112842023271
+"669","Vakinankaratra","MDG",41770,"Madagascar",0.0226,0.198,3,11.6112842023271
+"670","Vatovavy Fitovinany","MDG",41771,"Madagascar",0.1285,0.198,2,12.8216493249169
+"671","Kabarole","UGA",42180,"Uganda",0.2221,0.380436,3,8.57499179073223
+"672","Kaberamaido","UGA",42181,"Uganda",0.484,0.470204,1,NA
+"673","Kampala","UGA",42182,"Uganda",0.088,0.38602,4,3.8392810370132
+"674","Kamwenge","UGA",42183,"Uganda",0.2697,0.380436,3,10.4252522657124
+"675","Kanungu","UGA",42184,"Uganda",0.0705,0.260009,3,7.46879808971433
+"676","Kayunga","UGA",42185,"Uganda",0.5279,0.418572,1,NA
+"677","Mayuge","UGA",42189,"Uganda",0.6486,0.4572,1,NA
+"678","Nakasongola","UGA",42195,"Uganda",0.4609,0.418572,1,NA
+"679","Rukungiri","UGA",42197,"Uganda",0.0841,0.260009,3,7.46879808971433
+"680","Wakiso","UGA",42200,"Uganda",0.1423,0.398838,4,5.30530976214437
+"681","Yumbe","UGA",42201,"Uganda",0.502,0.425836,1,NA
+"682","Amolatar","UGA",47067,"Uganda",0.5151,0.355542,1,NA
+"683","Amuria","UGA",47068,"Uganda",0.4126,0.470204,2,16.7401724187276
+"684","Butaleja","UGA",47071,"Uganda",0.6248,0.470204,1,NA
+"685","Ibanda","UGA",47072,"Uganda",0.2223,0.260009,2,12.7563050833774
+"686","Isingiro","UGA",47073,"Uganda",0.1588,0.260009,3,9.95184793612507
+"687","Kaabong","UGA",47074,"Uganda",0.1216,0.355542,4,5.3811351049125
+"688","Kaliro","UGA",47075,"Uganda",0.6678,0.4572,1,NA
+"689","Katakwi","UGA",47078,"Uganda",0.3649,0.470204,2,13.3919922571247
+"690","Kiruhura","UGA",47079,"Uganda",0.3062,0.260009,2,17.4522722244189
+"691","Koboko","UGA",47080,"Uganda",0.5173,0.425836,1,NA
+"692","Luwero","UGA",47083,"Uganda",0.365,0.418572,2,14.7601098010362
+"693","Mbale","UGA",47085,"Uganda",0.406,0.470204,2,16.2115439424566
+"694","Mbarara","UGA",47086,"Uganda",0.1235,0.260009,3,8.59700919931158
+"695","Mityana","UGA",47087,"Uganda",0.367,0.418572,2,14.8532523529687
+"696","Mubende","UGA",47088,"Uganda",0.5199,0.418572,1,NA
+"697","Nakaseke","UGA",47089,"Uganda",0.4192,0.418572,2,18.6761427041421
+"698","Tororo","UGA",47090,"Uganda",0.6211,0.470204,1,NA
+"699","Diourbel","SEN",47585,"Senegal",0.047,0.245014,3,8.32918703079088
+"700","Fatick","SEN",47586,"Senegal",0.0604,0.281193,3,6.44038484172948
+"701","Louga","SEN",47587,"Senegal",0.0445,0.242698,3,8.48212922011969
+"702","Matam","SEN",47588,"Senegal",0.083,0.339379,4,4.72796926431027
+"703","Saint louis","SEN",47589,"Senegal",0.0454,0.243881,3,8.42063456350207
+"704","Oromia","ETH",47678,"Ethiopia",0.003,0.0867867,1,NA
+"705","Somali","ETH",47679,"Ethiopia",0.0062,0.0867867,1,NA
+"706","Administrative unit not available","KEN",61033,"Kenya",0.0323,0.502464,4,2.55235315340483
+"707","Area under National Administration","MOZ",65246,"Mozambique",0.3929,0.34911,2,19.148156841532
+"708","Area under National Administration","MWI",65268,"Malawi",0.3215,0.34911,2,14.1551410630593
+"709","Abia","NGA",65698,"Nigeria",0.3273,0.469398,3,11.218315525923
+"710","Bauchi","NGA",65699,"Nigeria",0.3746,0.392277,2,16.1932693136353
+"711","Bayelsa","NGA",65700,"Nigeria",0.2595,0.473017,3,8.09972511659005
+"712","Ebonyi","NGA",65701,"Nigeria",0.3758,0.510231,2,13.2953549574673
+"713","Ekiti","NGA",65702,"Nigeria",0.4167,0.370356,1,NA
+"714","Enugu","NGA",65703,"Nigeria",0.2129,0.41957,3,7.38020053095955
+"715","Gombe","NGA",65704,"Nigeria",0.3157,0.404736,2,12.0739773249045
+"716","Nassarawa","NGA",65705,"Nigeria",0.3317,0.488339,3,11.1269144480179
+"717","Ondo","NGA",65706,"Nigeria",0.446,0.399186,1,NA
+"718","Plateau","NGA",65707,"Nigeria",0.2197,0.419854,3,7.6355857941533
+"719","Rivers","NGA",65708,"Nigeria",0.1835,0.461039,4,5.71920556322036
+"720","Sokoto","NGA",65709,"Nigeria",0.3588,0.429165,2,14.0331149219123
+"721","Zamfara","NGA",65710,"Nigeria",0.4642,0.403123,1,NA
+"722","Bangui","CAF",67154,"Central African Republic",0.6409,0.472512,1,NA
+"723","Ascension","SHN",68772,NA,NA,NA,NA,NA
+"724","Saint Helena","SHN",68773,NA,NA,NA,NA,NA
+"725","Tristan Da Cunha","SHN",68774,NA,NA,NA,NA,NA
+"726","Kassala","SDN",68783,"Sudan",0.0179,0.368735,4,4.17167593882654
+"727","Northern Kordofan","SDN",68784,"Sudan",0.0253,0.390642,4,3.74546240108232
+"728","Gadaref","SDN",68805,"Sudan",0.0198,0.368735,4,4.17167593882654
+"729","Matabeleland North","ZWE",69549,"Zimbabwe",0.076,0.200711,3,11.4168498580244
+"730","Mashonaland East","ZWE",69550,"Zimbabwe",0.0217,0.0926808,1,NA
+"731","Aride","SYC",61141,NA,NA,NA,NA,NA
+"732","St. Pierre","SYC",61203,NA,NA,NA,NA,NA
+"733","Aldabra","SYC",61135,NA,NA,NA,NA,NA
+"734","Mbeya","TZA",48367,"United Republic of Tanzania",0.045,0.22863,3,9.38622170495791
+"735","Ilot Platte","SYC",61176,NA,NA,NA,NA,NA
+"736","Morogoro","TZA",48368,"United Republic of Tanzania",0.1124,0.303277,3,6.33369573952172
+"737","St. Francois","SYC",61201,NA,NA,NA,NA,NA
+"738","Assumption","SYC",61142,NA,NA,NA,NA,NA
+"739","Therese","SYC",61206,NA,NA,NA,NA,NA
+"740","Denis","SYC",61161,NA,NA,NA,NA,NA
+"741","La Digue","SYC",61178,NA,NA,NA,NA,NA
+"742","Cousin","SYC",61157,NA,NA,NA,NA,NA
+"743","English River","SYC",61164,NA,NA,NA,NA,NA
+"744","Ile la Fouche","SYC",61175,NA,NA,NA,NA,NA
+"745","Darros","SYC",61160,NA,NA,NA,NA,NA
+"746","Kigoma","TZA",48362,"United Republic of Tanzania",0.1681,0.351961,3,7.11848071882589
+"747","Coetivy","SYC",61207,NA,NA,NA,NA,NA
+"748","Singida","TZA",48377,"United Republic of Tanzania",0.0604,0.258462,3,7.55029584165191
+"749","Lindi","TZA",48364,"United Republic of Tanzania",0.2302,0.371107,3,9.1279690726111
+"750","Tanga","TZA",48381,"United Republic of Tanzania",0.0728,0.21795,3,10.1146681548355
+"751","Desroches","SYC",61163,NA,NA,NA,NA,NA
+"752","Marie-Louise","SYC",61182,NA,NA,NA,NA,NA
+"753","Petite Soeur","SYC",61187,NA,NA,NA,NA,NA
+"754","Long Island","SYC",61180,NA,NA,NA,NA,NA
+"755","Providence","SYC",61194,NA,NA,NA,NA,NA
+"756","Mwanza","TZA",48370,"United Republic of Tanzania",0.1855,0.426143,3,6.31663381860442
+"757","Administrative unit not available","SYC",61133,NA,NA,NA,NA,NA
+"758","African Banks","SYC",61134,NA,NA,NA,NA,NA
+"759","Bijoutier","SYC",61149,NA,NA,NA,NA,NA
+"760","Boudeuse","SYC",61151,NA,NA,NA,NA,NA
+"761","Glacis","SYC",61168,NA,NA,NA,NA,NA
+"762","Praslin","SYC",61193,NA,NA,NA,NA,NA
+"763","St Louis","SYC",61200,NA,NA,NA,NA,NA
+"764","Alphonse","SYC",61136,NA,NA,NA,NA,NA
+"765","Plaisance","SYC",61188,NA,NA,NA,NA,NA
+"766","Cascade","SYC",61153,NA,NA,NA,NA,NA
+"767","Administrative unit not available","SYC",61208,NA,NA,NA,NA,NA
+"768","Pemba South","TZA",48378,"United Republic of Tanzania",0.0301,NA,NA,NA
+"769","Rukwa","TZA",48374,"United Republic of Tanzania",0.0667,0.409584,4,3.42748558075637
+"770","Bel Air","SYC",61147,NA,NA,NA,NA,NA
+"771","Dar es Salaam","TZA",48358,"United Republic of Tanzania",0.0575,NA,NA,NA
+"772","Ruvuma","TZA",48375,"United Republic of Tanzania",0.1229,0.30153,3,6.74929434288855
+"773","Silhouette","SYC",61199,NA,NA,NA,NA,NA
+"774","Grand Anse Mahe","SYC",61169,NA,NA,NA,NA,NA
+"775","Ile du Sud","SYC",61174,NA,NA,NA,NA,NA
+"776","Platte","SYC",61189,NA,NA,NA,NA,NA
+"777","Grande Soeur","SYC",61170,NA,NA,NA,NA,NA
+"778","North Island","SYC",61186,NA,NA,NA,NA,NA
+"779","Kagera","TZA",48361,"United Republic of Tanzania",0.1833,0.29348,3,9.34562296811487
+"780","Unguja North","TZA",48372,"United Republic of Tanzania",0.0462,NA,NA,NA
+"781","Seche","SYC",61198,NA,NA,NA,NA,NA
+"782","Islette","SYC",61177,NA,NA,NA,NA,NA
+"783","Au Cap","SYC",61144,NA,NA,NA,NA,NA
+"784","Bird","SYC",61150,NA,NA,NA,NA,NA
+"785","Roche Caiman","SYC",61196,NA,NA,NA,NA,NA
+"786","Mara","TZA",48366,"United Republic of Tanzania",0.121,0.373708,4,5.04138669088673
+"787","Unguja South","TZA",48379,"United Republic of Tanzania",0.0498,0.474239,4,2.72435793972495
+"788","Moyenne","SYC",61185,NA,NA,NA,NA,NA
+"789","Takamaka","SYC",61205,NA,NA,NA,NA,NA
+"790","Les Mamelles","SYC",61179,NA,NA,NA,NA,NA
+"791","Beau Vallon","SYC",61146,NA,NA,NA,NA,NA
+"792","Belombre","SYC",61148,NA,NA,NA,NA,NA
+"793","Mtwara","TZA",48369,"United Republic of Tanzania",0.2006,0.399589,3,7.32958126161722
+"794","Felicite","SYC",61166,NA,NA,NA,NA,NA
+"795","Mont Buxton","SYC",61183,NA,NA,NA,NA,NA
+"796","Mont Fleuri","SYC",61184,NA,NA,NA,NA,NA
+"797","Farquhar","SYC",61165,NA,NA,NA,NA,NA
+"798","Anse Boileau","SYC",61138,NA,NA,NA,NA,NA
+"799","Ile Aux Rat","SYC",61171,NA,NA,NA,NA,NA
+"800","Manyara","TZA",48365,"United Republic of Tanzania",0.0413,0.172233,2,13.7569899773122
+"801","Curieuse","SYC",61159,NA,NA,NA,NA,NA
+"802","Desnoeufs","SYC",61162,NA,NA,NA,NA,NA
+"803","Arusha","TZA",48357,"United Republic of Tanzania",0.0358,0.1571,2,15.1573607380498
+"804","St. Joseph Atoll","SYC",61202,NA,NA,NA,NA,NA
+"805","Ile Cocos","SYC",61173,NA,NA,NA,NA,NA
+"806","Fregate","SYC",61167,NA,NA,NA,NA,NA
+"807","Shinyanga","TZA",48376,"United Republic of Tanzania",0.1491,0.385299,4,5.77326866407183
+"808","Pemba North","TZA",48371,"United Republic of Tanzania",0.0336,NA,NA,NA
+"809","Kilimanjaro","TZA",48363,"United Republic of Tanzania",0.0285,0.201913,3,11.3011616301247
+"810","Conception","SYC",61155,NA,NA,NA,NA,NA
+"811","Remire","SYC",61195,NA,NA,NA,NA,NA
+"812","Ste Anne","SYC",61204,NA,NA,NA,NA,NA
+"813","Unguja Urban West","TZA",48382,"United Republic of Tanzania",0.0391,NA,NA,NA
+"814","Anse Aux Pins","SYC",61137,NA,NA,NA,NA,NA
+"815","Tabora","TZA",48380,"United Republic of Tanzania",0.0993,0.431609,4,3.38568311088175
+"816","Anse Royale","SYC",61140,NA,NA,NA,NA,NA
+"817","Poivre","SYC",61191,NA,NA,NA,NA,NA
+"818","Cerf Island","SYC",61154,NA,NA,NA,NA,NA
+"819","Port Glaud","SYC",61192,NA,NA,NA,NA,NA
+"820","Pointe Larue","SYC",61190,NA,NA,NA,NA,NA
+"821","Pwani","TZA",48373,"United Republic of Tanzania",0.1706,0.386067,3,6.51149274052706
+"822","Iringa","TZA",48360,"United Republic of Tanzania",0.0582,0.115732,2,19.6770004144553
+"823","Dodoma","TZA",48359,"United Republic of Tanzania",0.0616,0.227236,3,9.48772162501269
+"824","Cachee","SYC",61152,NA,NA,NA,NA,NA
+"825","Ile Aux Vaches","SYC",61172,NA,NA,NA,NA,NA
+"826","Cosmoledo","SYC",61156,NA,NA,NA,NA,NA
+"827","Round Island","SYC",61197,NA,NA,NA,NA,NA
+"828","Anse Etoile","SYC",61139,NA,NA,NA,NA,NA
+"829","Marianne","SYC",61181,NA,NA,NA,NA,NA
+"830","Astove","SYC",61143,NA,NA,NA,NA,NA
+"831","Cousine","SYC",61158,NA,NA,NA,NA,NA
+"832","Baie Lazare","SYC",61145,NA,NA,NA,NA,NA
+"833","Central","KEN",51325,"Kenya",0.0047,0.0980946,1,NA
+"834","Rift Valley","KEN",51331,"Kenya",0.0159,0.189694,2,12.287067950637
+"835","Nairobi","KEN",51328,"Kenya",2e-04,0.22442,3,9.65881211290165
+"836","Northern Province","ZAF",1013704,"South Africa",0.0233,0.398838,4,3.60433016861489
+"837","Eastern Cape","ZAF",1013702,"South Africa",0,NA,NA,NA
+"838","Northern Cape","ZAF",1013701,"South Africa",0,NA,NA,NA
+"839","Western Cape","ZAF",1013707,"South Africa",0,NA,NA,NA
+"840","Kwazulu-natal","ZAF",1013703,"South Africa",0.0026,0.260009,3,7.46879808971433
+"841","Free State","ZAF",1013706,"South Africa",0,NA,NA,NA
+"842","Mpumalanga","ZAF",1013699,"South Africa",0.0151,0.470204,4,2.75423407547294
+"843","Gauteng","ZAF",1013705,"South Africa",1e-04,0.198,3,11.6112842023271
+"844","North-west","ZAF",1013700,"South Africa",3e-04,0.470204,4,2.75423407547294
+"845","Western","KEN",51332,"Kenya",0.2492,0.350441,3,10.4083673116801
+"846","Nyanza","KEN",51330,"Kenya",0.1566,0.366264,3,6.41553236453276
+"847","Eastern","KEN",51327,"Kenya",0.0098,0.315064,4,5.27659638427274
+"848","Coast","KEN",51326,"Kenya",0.0413,0.321182,4,5.12425355282837
+"849","North Eastern","KEN",51329,"Kenya",0.0179,0.373905,4,4.07631232445348
