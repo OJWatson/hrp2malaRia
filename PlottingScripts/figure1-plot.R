@@ -23,12 +23,14 @@ gg_color_hue <- function(n) {
 # ------------------------------------------------------------------
 
 # Read in simulation data
-fig1a <- read.csv(system.file("extdata","fig1a.csv",package="hrp2malaRia"))
+fig1a <- read.csv(system.file("extdata","fig1.csv",package="hrp2malaRia"),colClasses = c(rep("numeric",4),rep("NULL",6)))
+colnames(fig1a)[2] <- "hrp2.Deletion.Allele.Frequency"
 fig1a$Prevalence <- as.factor(fig1a$Prevalence)
-fig1b <- read.csv(system.file("extdata","fig1b.csv",package="hrp2malaRia"))
+fig1b <- read.csv(system.file("extdata","fig1.csv",package="hrp2malaRia"),colClasses = c(rep("numeric",1),rep("NULL",3),rep("numeric",3),rep("NULL",3)))
+colnames(fig1b)[2] <- "hrp2.Deletion.Allele.Frequency"
 fig1b$Starting.Frequency <- as.factor(fig1b$Starting.Frequency)
-fig1cd <- read.csv(system.file("extdata","fig1cd.csv",package="hrp2malaRia"))
-
+fig1cd <- read.csv(system.file("extdata","fig1.csv",package="hrp2malaRia"),colClasses = c(rep("numeric",1),rep("NULL",6),rep("numeric",3)))
+colnames(fig1cd)[2] <- "hrp2.Deletion.Allele.Frequency"
 # fig1a
 panels1 <- ggplot(fig1a,aes(x = Years,y=hrp2.Deletion.Allele.Frequency,color=Prevalence)) + geom_smooth(span=0.2,se=F) + ylim(0,1) +
   geom_vline(xintercept = 10) + geom_vline(xintercept = 15,linetype="dashed",color="black")
