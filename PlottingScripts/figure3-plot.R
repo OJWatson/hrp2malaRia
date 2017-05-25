@@ -28,8 +28,9 @@ get_legend<-function(myggplot){
 # ------------------------------------------------------------------
 
 # Read in observed source data - This is the observed data of hrp2 deletions collected by Parr at al 2016 (Pfhrp2-deleted Plasmodium falciparum parasites in the Democratic Republic of Congo: A national cross-sectional survey. J Infect Dis: 1–34. doi:10.1093/ecco-jcc/jjw024),
-fig3_observed <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"))
-fig3a_simulated <- read.csv(system.file("extdata","fig3a.csv",package="hrp2malaRia"))
+fig3_observed <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"),colClasses = c("NULL","character",rep("numeric",7),rep("NULL",8)))
+fig3a_simulated <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",10),rep("numeric",2),"character",rep("NULL",4)))
+colnames(fig3a_simulated)[3] <- "Province"
 
 df <- as.data.frame(list("Prevalence"=fig3a_simulated$PCR.PfPR.6.59.months,
                          "Dels"=fig3a_simulated$Proportion.Population.only.infected.with.pfhrp2.deleted.mutants,
@@ -64,8 +65,10 @@ fig3a <- ggplot(data = fig3_observed,aes(x=PCR.05,y=propDel,label=Province)) +
 
 
 # Read in observed source data - This is the observed data of hrp2 deletions collected by Parr at al 2016 (Pfhrp2-deleted Plasmodium falciparum parasites in the Democratic Republic of Congo: A national cross-sectional survey. J Infect Dis: 1–34. doi:10.1093/ecco-jcc/jjw024),
-fig3_observed <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"))
-fig3b_simulated <- read.csv(system.file("extdata","fig3b.csv",package="hrp2malaRia"))
+# Read in observed source data - This is the observed data of hrp2 deletions collected by Parr at al 2016 (Pfhrp2-deleted Plasmodium falciparum parasites in the Democratic Republic of Congo: A national cross-sectional survey. J Infect Dis: 1–34. doi:10.1093/ecco-jcc/jjw024),
+fig3_observed <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"),colClasses = c("NULL","character",rep("numeric",7),rep("NULL",8)))
+fig3b_simulated <- read.csv(system.file("extdata","fig3.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",14),rep("numeric",2),"character"))
+colnames(fig3b_simulated)[3] <- "Province"
 
 df <- as.data.frame(list("Prevalence"=fig3b_simulated$PCR.PfPR.6.59.months,
                          "Dels"=fig3b_simulated$Proportion.Population.only.infected.with.pfhrp2.deleted.mutants,

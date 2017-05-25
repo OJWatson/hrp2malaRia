@@ -82,12 +82,17 @@ return(gp)
 
 ########
 
-fig2a <- read.csv(system.file("extdata","fig2a.csv",package="hrp2malaRia"))
+fig2a <- read.csv(system.file("extdata","fig2.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",2),rep("numeric",3),
+                                                                                          rep("character",3),rep("NULL",9)))
+colnames(fig2a) <- c("Years.until.20..infected.with.only.hrp2.deletions","PfPR","ft","PfPR_grouped","lessthan5","20+")
+
 fig2a_heatmap <- heatmap_plot(fig2a)
 leg <- get_legend(fig2a_heatmap)
 ########
 
-fig2b <- read.csv(system.file("extdata","fig2b.csv",package="hrp2malaRia"))
+fig2b <- read.csv(system.file("extdata","fig2.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",10),rep("numeric",4),
+                                                                                          rep("character",3)))
+colnames(fig2b) <- c("Years.until.20..infected.with.only.hrp2.deletions","hrp2d","PfPR","ft","PfPR_grouped","lessthan5","20+")
 fig2b_heatmap <- heatmap_plot(fig2b)
 
 ########
@@ -120,12 +125,14 @@ grid.arrange(myplot1,myplot2,  leg, ncol = 3,widths = c(2,2,1))
 
 ########
 
-fig2s1a <- read.csv(system.file("extdata","fig2_s1a.csv",package="hrp2malaRia"))
+fig2s1a <- read.csv(system.file("extdata","fig2_s1.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",1),rep("numeric",3),"character",rep("NULL",5)))
+colnames(fig2s1a) <- c("hrp2.deletion.frequency.after.20.years",	"PfPR",	"ft",	"PfPR_grouped")
 fig2s1a_heatmap <- heatmap_allele_plot(fig2s1a)
 leg <- get_legend(fig2s1a_heatmap)
 ########
 
-fig2s1b <- read.csv(system.file("extdata","fig2_s1b.csv",package="hrp2malaRia"))
+fig2s1b <- read.csv(system.file("extdata","fig2_s1.csv",package="hrp2malaRia"),colClasses = c(rep("NULL",6),rep("numeric",3),"character"))
+colnames(fig2s1b) <- c("hrp2.deletion.frequency.after.20.years",	"PfPR",	"ft",	"PfPR_grouped")
 fig2s1b_heatmap <- heatmap_allele_plot(fig2s1b)
 
 ########

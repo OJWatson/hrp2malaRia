@@ -131,25 +131,20 @@ rasterImage(legend_image, 0, 0, 0.5,1,interpolate = F)
 
 windows()
 
-fig4_supp2a_data <- read.csv(system.file("extdata","fig4_s2a.csv",package="hrp2malaRia"),header = T,row.names = 1)
-fig4_supp2b_data <- read.csv(system.file("extdata","fig4_s2b.csv",package="hrp2malaRia"),header = T,row.names = 1)
-
+fig4_supp2a_data <- read.csv(system.file("extdata","fig4_s2.csv",package="hrp2malaRia"),header = T,row.names = 1)
+fig4_supp2b_data <- fig4_supp2a_data[,1003:2002]
+fig4_supp2a_data <- fig4_supp2a_data[,1:1000]
 # fT values that correspond to source data matrix row names
 ft <- as.numeric(unlist(lapply(strsplit(rownames(fig4_supp2a_data),"  ",fixed=T),function(x){return(x[2])})))
 
 # microscopy prevalences that correspond to source data col names
-prev <- as.numeric(unlist(lapply(strsplit(colnames(fig4_supp2a_data),"....",fixed=T),function(x){return(x[2])})))
+prev <- as.numeric(unlist(lapply(strsplit(colnames(fig4_supp2a_data)[1:1000],"....",fixed=T),function(x){return(x[2])})))
 
 fig4_supp2a <- list()
 fig4_supp2a$x <- ft
 fig4_supp2a$y <- prev
 fig4_supp2a$z <- as.matrix(fig4_supp2a_data)
 
-# fT values that correspond to source data matrix row names
-ft <- as.numeric(unlist(lapply(strsplit(rownames(fig4_supp2b_data),"  ",fixed=T),function(x){return(x[2])})))
-
-# microscopy prevalences that correspond to source data col names
-prev <- as.numeric(unlist(lapply(strsplit(colnames(fig4_supp2b_data),"....",fixed=T),function(x){return(x[2])})))
 
 fig4_supp2b <- list()
 fig4_supp2b$x <- ft
@@ -174,12 +169,12 @@ corner.label("b",cex=2)
 
 legend_image <- rev(as.raster(c(rep("grey",10),rep("white",10),viridis(80))))
 plot(c(0,2),c(0,1),type = 'n', axes = F,xlab = "", ylab="",main = "Years")
-text(x=1.75, y = c(0.05,0.20 ,0.6 ,1), labels = c("20+","0","10","20"))
+text(x=1.75, y = c(0.05,0.20 ,0.4,0.6 ,0.8,1), labels = c("20+","0","5","10","15","20"))
 rasterImage(legend_image, 0, 0, 1,1)
 
 legend_image <- rev(as.raster(c(rep("grey",10),rep("white",10),viridis(80))))
 plot(c(0,2),c(0,1),type = 'n', axes = F,xlab = "", ylab="",main = "Years")
-text(x=1.75, y = c(0.05,0.20 ,0.6 ,1), labels = c("20+","0","10","20"))
+text(x=1.75, y = c(0.05,0.20 ,0.4,0.6 ,0.8,1), labels = c("20+","0","5","10","15","20"))
 rasterImage(legend_image, 0, 0, 1,1)
 
 
