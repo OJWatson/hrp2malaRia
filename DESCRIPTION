@@ -9,6 +9,6 @@ Description: Individual based malaria transmission model.
 Imports:
   ggplot2,
   reshape2
-License: GPL2
+License: MIT
 LazyData: TRUE
 RoxygenNote: 5.0.1
