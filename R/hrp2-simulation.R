@@ -158,7 +158,7 @@ hrp2_Simulation <- function(
   a.k = 0.30677,
   ## delays and durations
   delay.mos = 10,
-  delay.gam = 12.5,
+  delay.gam = 12,
   d.E = 12,
   d.I = 200,
   d.T = 5,
@@ -676,9 +676,10 @@ hrp2_Simulation <- function(
     ## set true delay for initialisation hack
     true_grouped.delay <- grouped.delay
     true_rounded.dE <- rounded.dE
+    true_doubled.delay <- rounded.dE + delay.mos
     grouped.delay <- 1
     rounded.dE <- 1
-
+    doubled.delay <- 1
 
     ########################
     ## END INITIALISATION ##
@@ -710,9 +711,10 @@ hrp2_Simulation <- function(
     t <- res$Time[i]
 
     ## initial hack to allow the first delay time steps to iterate
-    if ((res$Counter - true_grouped.delay)>0){
+    if ((res$Counter - 35)>0){
       grouped.delay <- true_grouped.delay
       rounded.dE <- true_rounded.dE
+      doubled.delay <- true_doubled.delay
     }
 
     ## prepare next time step ##
@@ -731,6 +733,7 @@ hrp2_Simulation <- function(
 
     ## find buffer position
     ime <- which(res$Buffer==i-rounded.dE)
+    imem <- which(res$Buffer==i-doubled.delay)
 
     num.bites <- rbinom(n = N,1,prob = 1-exp(-(a.k * time.step * pi * res$Iv[ime])))
     pos.bites <- which(num.bites>0)
@@ -799,7 +802,7 @@ hrp2_Simulation <- function(
       # the infectious reservoir
       if(fitness != 1){
 
-        fitness.effect <- res$I.Reservoir[,ime] * c(fitness,1)
+        fitness.effect <- res$I.Reservoir[,imem] * c(fitness,1)
 
         # draw which strains are passed on
         new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = fitness.effect)
@@ -807,15 +810,17 @@ hrp2_Simulation <- function(
       } else {
 
         # draw which strains are passed on
-        new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = res$I.Reservoir[,ime])
-        new.strains.non.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.non.U),replace = TRUE, prob = res$I.Reservoir[,ime])
+        new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = res$I.Reservoir[,imem])
+        new.strains.non.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.non.U),replace = TRUE, prob = res$I.Reservoir[,imem])
 
       }
       # Add strain to those who are non U previously
       res$N.Sens[pos.new.infections.non.U[new.strains.non.U],res$Counter] <- res$N.Sens[pos.new.infections.non.U[new.strains.non.U],res$Counter] + 1
       res$N.Dels[pos.new.infections.non.U[!new.strains.non.U],res$Counter] <- res$N.Dels[pos.new.infections.non.U[!new.strains.non.U],res$Counter] + 1
 
-      # Clear all strains from those who are U before assigning strain
+      # Save all strains from those who are U before assigning one strain
+      U.sens <- res$N.Sens[pos.new.infections.U,res$Counter]
+      U.dels <- res$N.Dels[pos.new.infections.U,res$Counter]
       res$N.Sens[pos.new.infections.U,res$Counter] <- 0
       res$N.Dels[pos.new.infections.U,res$Counter] <- 0
       res$N.Sens[pos.new.infections.U[new.strains.U],res$Counter] <-  1
@@ -828,6 +833,10 @@ hrp2_Simulation <- function(
 
       # probability that hrp2' only individual will still be treated, 1 - chance of not being hrp3, microscopied or nonadherence
       rdt.det.new.infections[which(res$N.Sens[pos.new.infections,res$Counter] == 0)] <- 1 - ((1-rdt.det)*(1-rdt.nonadherence)*(1-microscopy.use))
+
+      # can now add in previously U strains
+      res$N.Sens[pos.new.infections.U,res$Counter] <- res$N.Sens[pos.new.infections.U,res$Counter] + U.sens
+      res$N.Dels[pos.new.infections.U,res$Counter] <- res$N.Dels[pos.new.infections.U,res$Counter] + U.dels
 
       # infection outcome
 
