@@ -149,8 +149,7 @@ hrp2_Simulation <- function(
   fever.age.breaks = c(-0.1,1,2,3,4,5,7,9,11,13,15,20,25,30,101),
   annual.nmf.per.age.bracket = c(2.235,1.841,1.503,1.175,0.928,0.67,0.486,0.512,0.475,0.429,0.652,0.747,0.804,0.789),
   nmf.multiplier=1,
-  region = NULL,
-  country = NULL,
+  ss = NULL,
   fitness = 1,
   ## entomological parameters
   mu.0 = 0.132,
@@ -205,20 +204,21 @@ hrp2_Simulation <- function(
   ##############################################################################################################################################################################
 
   ## function to createa annual season patterns
-  seasonality <- function(country.values,region){
+  seasonality <- function(ss){
 
     # define vector of times spanning one year
     tvec = seq(0,1,l=365/time.step)
 
     # calculate Fourier series
-    seasonality <- 1
-    seasonality <- seasonality + country.values["seasonal_a1",region]*cos(1 * 2*pi*tvec) + country.values["seasonal_b1",region]*sin(1 * 2*pi*tvec)
-    seasonality <- seasonality + country.values["seasonal_a2",region]*cos(2 * 2*pi*tvec) + country.values["seasonal_b2",region]*sin(2 * 2*pi*tvec)
-    seasonality <- seasonality + country.values["seasonal_a3",region]*cos(3 * 2*pi*tvec) + country.values["seasonal_b3",region]*sin(3 * 2*pi*tvec)
-
+    seasonality <- sapply(tvec,function(x) {
+      raw <- (ss[1]+ss[2]*cos(2*pi*x/365)+ss[4]*cos(2*2*pi*x/365)+ss[6]*cos(3*2*pi*x/365)+ss[3]*sin(2*pi*x/365)+ss[5]*sin(2*2*pi*x/365)+ ss[7]*sin(3*2*pi*x/365))
+    })
+    
+    seasonality <- seasonality/mean(seasonality)
+    
     # ensure that scaling factor never goes below zero (this can happen in practice because we are only using the first few terms in an infinite series)
-    seasonality[seasonality<0] <- 0
-
+    seasonality[seasonality<0.001] <- 0.001
+    
     return(seasonality)
 
   }
@@ -310,11 +310,11 @@ hrp2_Simulation <- function(
     res$FOIv[res$Counter] <- a.k*sum(res$I.Reservoir[,res$Counter])
 
     mv <- res$Sv[im1]+res$Ev[im1]+res$Iv[im1]
-    beta <- mv * mu.0 * theta[i]
+    beta <- mv_eq * mu.0 * theta[i]
 
     res$Sv[res$Counter] <- max(0,res$Sv[im1] + (-ince - (mu.0*res$Sv[im1]) + beta))
-    res$Ev[res$Counter] <- max(0,res$Ev[im1] + (ince - incv - (mu.0*theta[i]*res$Ev[im1])))
-    res$Iv[res$Counter] <- max(0,res$Iv[im1] + (incv - (mu.0*theta[i]*res$Iv[im1])))
+    res$Ev[res$Counter] <- max(0,res$Ev[im1] + (ince - incv - (mu.0*res$Ev[im1])))
+    res$Iv[res$Counter] <- max(0,res$Iv[im1] + (incv - (mu.0*res$Iv[im1])))
 
     return(res)
   }
@@ -487,12 +487,8 @@ hrp2_Simulation <- function(
   theta <- rep(theta,length.out=max.time+1)
 
   # if alternative country parameterisation is set load from data frame
-  if (!is.null(region)){
-    load(paste("data/",country,".rda",sep=""))
-    country.values <- get(country)
-    ft <- country.values["fT",region]
-    theta <- rep(seasonality(country.values,region),length.out=max.time+1)
-    theta <- rep(1,length.out=max.time+1)
+  if (!is.null(ss)){
+    theta <- rep(seasonality(ss),length.out=max.time+1)
   }
 
   # individual ids
@@ -500,7 +496,6 @@ hrp2_Simulation <- function(
 
 
   # Rough equilibrium starting points relationship
-  load("data/eq.0.rda")
   dat <- eq.0
 
   ## Create fixed variables
@@ -638,6 +633,8 @@ hrp2_Simulation <- function(
     res$Sv[1] <- 0.4212434*(EIR*365) + 0.5143586
     res$Ev[1] <- 0.018553*(EIR*365)
     res$Iv[1] <- 0.006762714*(EIR*365)
+    
+    mv_eq <-  res$Sv[1] + res$Ev[1] + res$Iv[1]
 
     dat.x <- c(1,2,3,4,5,6,7,8,9,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,
                110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200)
