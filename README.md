@@ -10,7 +10,6 @@ To install the development version from github (the package *devtools is require
 library(devtools)
 install_github("OJWatson/hrp2malaRia")
 ```
-Note that on Windows, a toolkit ([Rtools](https://cran.r-project.org/bin/windows/Rtools/)) needs to be installed separately for *devtools* to work. 
 
 Once installed, the package can be loaded using:
 

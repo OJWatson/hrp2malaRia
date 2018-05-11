@@ -9,4 +9,3 @@ hrp2malaria: Individual multiplicity of infection malaria model
 \author{
 OJ Watson \email{oj.watson@hotmail.co.uk}
 }
-

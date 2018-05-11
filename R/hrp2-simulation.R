@@ -17,6 +17,8 @@
 #' @param time.step Simulation time interval considered in days. Has to be 1.
 #' @param states Vector of the compartmental states. Default = c(1, 2, 3, 4, 5, 6), which are c("S","D","A","U","T","P")
 #' @param storage Number of last time steps to store. If storage = 0 (default), then all results are stored
+#' @param storage_capture Number of previous time steps used to calculate mean measures for series. Default = 30
+#' @param just_storage_results Boolean for keeping just the storage results.
 #' ## Demographic paramaters
 #' @param N Population Size. Default = 1000
 #' @param max.age Maximum age (years). Default = 100
@@ -90,6 +92,8 @@
 #' @param c.P Contribution from P. Default = 0
 #' @param g.1 Relates infectiousness probability of detection. Default = 1.82
 #'
+#' @export
+#' 
 #' @return Result a list of 59 elements including the following
 #' Time - Vector of time steps considered
 #' Status - Matrix of individuals' infection status by Time
@@ -125,6 +129,8 @@ hrp2_Simulation <- function(
   time.step = 1,
   states = c(1, 2, 3, 4, 5, 6),
   storage = 50,
+  storage_capture = 30,
+  just_storage_results = FALSE,
   #states = c("S","D","A","U","T","P"),
   ## demographic parameters
   N = 1000,
@@ -207,7 +213,7 @@ hrp2_Simulation <- function(
   seasonality <- function(ss){
 
     # define vector of times spanning one year
-    tvec = seq(0,1,l=365/time.step)
+    tvec = 1:365
 
     # calculate Fourier series
     seasonality <- sapply(tvec,function(x) {
@@ -242,8 +248,8 @@ hrp2_Simulation <- function(
   ## function to update the result matrix in anticipation of next time step
   update <- function(res,i){
 
+    #browser()
     ## initially assume new time-step has same states and strains as before
-
     ## find buffer position
     im1 <- which(res$Buffer==i-1)
 
@@ -258,7 +264,8 @@ hrp2_Simulation <- function(
     res$I.D <- res$I.D*exp(-r.ID)
 
     ## Calculate new individual contributions
-
+    
+    #browser()
     # individual infectivity to mosquitos contribution
 
     psi <- (1 - rho*exp(-res$Age/a.0))
@@ -266,17 +273,18 @@ hrp2_Simulation <- function(
     #psi <- psi / (mean(psi) / omega)
     psi <- psi/mean(psi)
 
-    pi <- psi * zeta
+    res$pie[,res$Counter] <- psi * zeta
 
     ## find buffer position
-    img <- which(res$Buffer==i-grouped.delay)
-
+    img <- which(res$Buffer==i-rounded.delay.gam)
+    imm <- which(res$Buffer==i-rounded.delay.mos)
+    
     # calculate strains present in humans proportional to their individual bite rates and weighted MOI
     tots <- res$N.Dels[,img]+res$N.Sens[,img]
     tots[tots==0] <- NaN
 
-    h.del.reservoir <- pi*res$N.Dels[,img]
-    h.sen.reservoir <- pi*res$N.Sens[,img]
+    h.del.reservoir <- res$pie[,img]*res$N.Dels[,img]
+    h.sen.reservoir <- res$pie[,img]*res$N.Sens[,img]
 
     # calculate contribution based on their infection status
     ## first non age dependent, i.e. non asymptomatic
@@ -299,23 +307,27 @@ hrp2_Simulation <- function(
     h.sen.reservoir <- (h.sen.reservoir * cont)/tots
 
 
-    # calculate human reservoir
+    # calculate human reservoir ( this is  the lagged reservoir due to gametocytogenesis and this FOIv is also the FOIv from delay_gam days earlier)
     res$I.Reservoir[,res$Counter] <- c(sum(h.del.reservoir,na.rm=TRUE)/N,sum(h.sen.reservoir,na.rm=TRUE)/N)
-
+    res$FOIv[res$Counter] <- a.k*sum(res$I.Reservoir[,res$Counter])
+    
     # mosquito dynamics
     surv.0 <- exp(-mu.0 * delay.mos)
-    ince <- a.k*(sum(res$I.Reservoir[,res$Counter]))*res$Sv[im1]
-    incv <- ince * surv.0
-
-    res$FOIv[res$Counter] <- a.k*sum(res$I.Reservoir[,res$Counter])
+    res$ince[res$Counter] <- res$FOIv[res$Counter]*res$Sv[im1]
+    ince <- res$ince[res$Counter]
+    incv <- res$ince[imm]  * surv.0
 
     mv <- res$Sv[im1]+res$Ev[im1]+res$Iv[im1]
-    beta <- mv_eq * mu.0 * theta[i]
+    beta <- res$mv_eq * mu.0 * theta[i]
 
     res$Sv[res$Counter] <- max(0,res$Sv[im1] + (-ince - (mu.0*res$Sv[im1]) + beta))
     res$Ev[res$Counter] <- max(0,res$Ev[im1] + (ince - incv - (mu.0*res$Ev[im1])))
     res$Iv[res$Counter] <- max(0,res$Iv[im1] + (incv - (mu.0*res$Iv[im1])))
 
+    if(is.na(res$Iv[res$Counter])){
+      catach <- 7
+      browser()
+    }
     return(res)
   }
 
@@ -346,29 +358,12 @@ hrp2_Simulation <- function(
     } else {
       reload.res <- context::task_result(id = ID,db = root)
     }
-
-    res$Time <- c(reload.res$Time,res$Time+max(reload.res$Time)+1)
-    res$Buffer <- reload.res$Buffer
-    res$Status <- reload.res$Status
-    res$Age <- reload.res$Age
-    res$Zeta <- reload.res$Zeta
-    ## Immunities
-    res$Last_Infection_Time.CA <- reload.res$Last_Infection_Time.CA
-    res$Last_Infection_Time.D <- reload.res$Last_Infection_Time.D
-    res$Last_Bite_Time <- reload.res$Last_Bite_Time
-    res$I.CA <- reload.res$I.CA
-    res$I.CM <- reload.res$I.CM
-    res$I.D <- reload.res$I.D
-    res$I.B <- reload.res$I.B
-    ## Mosquito / infection
-    res$Sv <- reload.res$Sv
-    res$Ev <- reload.res$Ev
-    res$Iv <- reload.res$Iv
-    res$I.Reservoir <- reload.res$I.Reservoir
-    ## Prev / incidence outputs
-    res$N.Sens <- reload.res$N.Sens
-    res$N.Dels <- reload.res$N.Dels
-
+    
+    #browser()
+    new_time <- c(reload.res$Time,c(res$Time[2:(length(res$Time))]+max(reload.res$Time)))
+    res <- reload.res
+    res$Time <- new_time
+    
     ## series
     res$S.Times <- reload.res$S.Times
     res$S.Status <- cbind(reload.res$S.Status,matrix(0,nrow=6,ncol=length(save.times)))
@@ -389,8 +384,8 @@ hrp2_Simulation <- function(
     res$S.Prev.Mono.S <- c(reload.res$S.Prev.Mono.S,rep(0,length(save.times)))
     res$S.Prev.Mono.D.05 <- c(reload.res$S.Prev.Mono.D.05,rep(0,length(save.times)))
     res$S.Prev.Mono.S.05 <- c(reload.res$S.Prev.Mono.S.05,rep(0,length(save.times)))
-    res$S.Clin.Mono.D <- c(reload.res$S.Prev.Mono.D,rep(0,length(save.times)))
-    res$S.Clin.Mono.S <- c(reload.res$S.Prev.Mono.S,rep(0,length(save.times)))
+    res$S.Clin.Mono.D <- c(reload.res$S.Clin.Mono.D,rep(0,length(save.times)))
+    res$S.Clin.Mono.S <- c(reload.res$S.Clin.Mono.S,rep(0,length(save.times)))
     res$S.Clin.Mono.D.05 <- c(reload.res$S.Clin.Mono.D.05,rep(0,length(save.times)))
     res$S.Clin.Mono.S.05 <- c(reload.res$S.Clin.Mono.S.05,rep(0,length(save.times)))
 
@@ -399,7 +394,7 @@ hrp2_Simulation <- function(
 
   # function to change which strains infected individuals posses given a desired frequency of deleted strains
   freq.adjust <- function(res,target){
-
+    #browser()
     former.hrp2 <- colSums(res$N.Sens)
     former.hrp2d <- colSums(res$N.Dels)
     former.ratio <- former.hrp2d/colSums(rbind(former.hrp2d,former.hrp2))
@@ -441,9 +436,18 @@ hrp2_Simulation <- function(
 
     hrp2.multipliers <- (hrp2/former.hrp2)
     hrp2d.multipliers <- (hrp2d/former.hrp2d)
-
-    res$I.Reservoir <- t(cbind(res$I.Reservoir[1,]*hrp2d.multipliers,res$I.Reservoir[2,]*hrp2.multipliers))
-
+    
+    if(is.element(Inf,hrp2d.multipliers)){
+      temp_res <- t(cbind(res$I.Reservoir[1,],res$I.Reservoir[2,]*hrp2.multipliers))
+      temp_res[1,] <- res$I.Reservoir[2,] - temp_res[2,]
+      res$I.Reservoir <- temp_res
+    } else if(is.element(Inf,hrp2.multipliers)){
+      temp_res <- t(cbind(res$I.Reservoir[1,]*hrp2d.multipliers,res$I.Reservoir[2,]))
+      temp_res[2,] <- res$I.Reservoir[1,] - temp_res[1,]
+      res$I.Reservoir <- temp_res
+    } else {
+      res$I.Reservoir <- t(cbind(res$I.Reservoir[1,]*hrp2d.multipliers,res$I.Reservoir[2,]*hrp2.multipliers))
+    }
     return(res)
 
   }
@@ -488,7 +492,7 @@ hrp2_Simulation <- function(
 
   # if alternative country parameterisation is set load from data frame
   if (!is.null(ss)){
-    theta <- rep(seasonality(ss),length.out=max.time+1)
+    theta <- rep(seasonality(ss),length.out=max(max.time+1,365))
   }
 
   # individual ids
@@ -502,7 +506,8 @@ hrp2_Simulation <- function(
   #################################
 
   # total delay
-  grouped.delay <- round((delay.gam)/time.step)
+  rounded.delay.mos <- round((delay.mos)/time.step)
+  rounded.delay.gam <- round((delay.gam)/time.step)
   rounded.dE <- round((d.E)/time.step)
   # per time step rate for treatment
   r.T = time.step /d.T
@@ -550,9 +555,11 @@ hrp2_Simulation <- function(
               "I.CM" = vector(mode = "numeric", length = N),
               "I.D" = vector(mode = "numeric", length = N),
 
-              ## Mosquito / infection outputs
+              ## Mosquito / infection reservoirs and contribution lags
 
               "I.Reservoir" = matrix(0,nrow = 2,ncol=res.cols),
+              "ince" = vector(mode = "numeric", length = res.cols),
+              "pie" = matrix(nrow = N,ncol = res.cols,data = 0),
               "Sv" = vector(mode = "numeric", length = res.cols),
               "Ev" = vector(mode = "numeric", length = res.cols),
               "Iv" = vector(mode = "numeric", length = res.cols),
@@ -608,8 +615,12 @@ hrp2_Simulation <- function(
 
   if(!is.null(ID)){
 
+    #browser()
+    
     # reload previous simulations
     res <- fetch(res,ID,direct.input)
+    
+    
 
     # adjust allele frequencies if required
     if(!is.null(desired.freq)){
@@ -617,15 +628,23 @@ hrp2_Simulation <- function(
     }
     # collect non stored varables and prepare results for new simulation
     zeta <- res$Zeta
-    max.time <- max(res$Time)
+    max.time <- max(res$Time)+1
+    if(is.null(ss)){
+      theta <- rep(1,length.out=max.time)
+    } else {
+      theta <- rep(theta[1:365],length.out=max.time) 
+    }
+    #res <- update(res,res$Buffer[1])
     start <- res$Buffer[1]
     save.times <- floor(seq(start+28,max.time-1,(its-1)/srs))
     logtenth <- floor(seq(start+1,max.time-1,its/10))
     res$S.Times <- c(res$S.Times,save.times)
-    its <- max.time-1
-    theta <- rep(theta,length.out=its+1)
-    true_grouped.delay <- grouped.delay
+    its <- max.time - 1
+
+    true_rounded.delay.gam <- rounded.delay.gam
+    true_rounded.delay.mos <- rounded.delay.mos
     true_rounded.dE <- rounded.dE
+
     ptm <- proc.time()
 
   } else {
@@ -634,7 +653,7 @@ hrp2_Simulation <- function(
     res$Ev[1] <- 0.018553*(EIR*365)
     res$Iv[1] <- 0.006762714*(EIR*365)
     
-    mv_eq <-  res$Sv[1] + res$Ev[1] + res$Iv[1]
+    res$mv_eq <-  res$Sv[1] + res$Ev[1] + res$Iv[1]
 
     dat.x <- c(1,2,3,4,5,6,7,8,9,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,
                110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200)
@@ -655,7 +674,8 @@ hrp2_Simulation <- function(
     # individual biting heterogeneity scaled by new ages
     psi <- (1 - rho*exp(-res$Age/a.0))
     psi <- psi/mean(psi)
-
+    res$pie[,res$Counter] <- psi * zeta
+    
     ##  immunities from previous data equilibriums
     res$I.D <- 1.4*zeta * dat$Eq.I.D[eq,1]*age + dat$Eq.I.D[eq,2]
     res$I.CA <- 1.3*zeta * dat$Eq.I.CA[eq,1]*age + dat$Eq.I.CA[eq,2]
@@ -671,13 +691,14 @@ hrp2_Simulation <- function(
     phi <- phi.0 * ( phi.1 + ( (1 - phi.1) / (1 + ((res$I.CA +res$I.CM) / I.C0)^k.C) ) )
 
     ## set true delay for initialisation hack
-    true_grouped.delay <- grouped.delay
+    true_rounded.delay.gam <- rounded.delay.gam
+    true_rounded.delay.mos <- rounded.delay.mos
     true_rounded.dE <- rounded.dE
-    true_doubled.delay <- rounded.dE + delay.mos
-    grouped.delay <- 1
-    rounded.dE <- 1
-    doubled.delay <- 1
 
+    rounded.delay.gam <- 1
+    rounded.delay.mos <- 1
+    rounded.dE <- 1
+    
     ########################
     ## END INITIALISATION ##
     ##########################################
@@ -690,9 +711,11 @@ hrp2_Simulation <- function(
     if (res$Counter > res.cols) res$Counter <- 1
     res$Buffer[res$Counter] <- i + 1
 
+    # fill in initial timestep with any within update res params
     res <- update(res,i+1)
     res$I.Reservoir[,1] <- res$I.Reservoir[,2]
-
+    res$ince[1] <- res$ince[2]
+    
     start <- res$Counter
     ## start timer
     ptm <- proc.time()
@@ -708,10 +731,11 @@ hrp2_Simulation <- function(
     t <- res$Time[i]
 
     ## initial hack to allow the first delay time steps to iterate
-    if ((res$Counter - 35)>0){
-      grouped.delay <- true_grouped.delay
+    if (i>storage){
+     # browser()
+      rounded.delay.gam <- true_rounded.delay.gam
+      rounded.delay.mos <- true_rounded.delay.mos
       rounded.dE <- true_rounded.dE
-      doubled.delay <- true_doubled.delay
     }
 
     ## prepare next time step ##
@@ -720,19 +744,20 @@ hrp2_Simulation <- function(
     ## parameters that are needed outside the update loop ##
 
     # individual biting heterogeneity scaled by new ages
-    psi <- (1 - rho*exp(-res$Age/a.0))
-
-    #psi <- psi / (mean(psi) / omega)
-    psi <- psi/mean(psi)
-
-    # first calculate which individuals have been bitten
-    pi <- psi * zeta
+    # psi <- (1 - rho*exp(-res$Age/a.0))
+    # 
+    # #psi <- psi / (mean(psi) / omega)
+    # psi <- psi/mean(psi)
+    # 
+    # # first calculate biting rites for today
+    # pie[,res$Counter] <- psi * zeta
 
     ## find buffer position
     ime <- which(res$Buffer==i-rounded.dE)
-    imem <- which(res$Buffer==i-doubled.delay)
+    imm <- which(res$Buffer==i-rounded.delay.mos)
 
-    num.bites <- rbinom(n = N,1,prob = 1-exp(-(a.k * time.step * pi * res$Iv[ime])))
+    num.bites <- rbinom(n = N,1,prob = 1-exp(-(a.k * time.step * res$pie[,ime] * res$Iv[ime])))
+    #browser()
     pos.bites <- which(num.bites>0)
 
     res$dEIR[res$Counter] <- sum(num.bites[res$Age>(18*365)])/(sum(res$Age>(18*365))*time.step)
@@ -799,7 +824,7 @@ hrp2_Simulation <- function(
       # the infectious reservoir
       if(fitness != 1){
 
-        fitness.effect <- res$I.Reservoir[,imem] * c(fitness,1)
+        fitness.effect <- res$I.Reservoir[,imm] * c(fitness,1)
 
         # draw which strains are passed on
         new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = fitness.effect)
@@ -807,8 +832,8 @@ hrp2_Simulation <- function(
       } else {
 
         # draw which strains are passed on
-        new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = res$I.Reservoir[,imem])
-        new.strains.non.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.non.U),replace = TRUE, prob = res$I.Reservoir[,imem])
+        new.strains.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.U),replace = TRUE, prob = res$I.Reservoir[,imm])
+        new.strains.non.U <- sample(x = c(FALSE,TRUE), size = length(pos.new.infections.non.U),replace = TRUE, prob = res$I.Reservoir[,imm])
 
       }
       # Add strain to those who are non U previously
@@ -886,15 +911,18 @@ hrp2_Simulation <- function(
       ### Incidence ########################################################################
 
       ## Incidence measurements, thus require locations of individuas who could be infected, i.e. S, D, A, U
-      previous.y.pos <- pos.new.infections[res$Status[pos.new.infections,im1] %in% c(1,2,3,4)]
-
+      previous.y.pos <- pos.new.infections[res$Status[pos.new.infections,im1] %in% c(1,3,4)]
+      incident_pos <- previous.y.pos[which(res$Status[previous.y.pos,res$Counter] %in% c(2,5))]
+      
       ## Total New Infections
-      res$Incidence[res$Counter] <- sum((res$Status[previous.y.pos,res$Counter] %in% c(2,5))) / N
+      res$Incidence[res$Counter] <- length(incident_pos) / N
 
       ## Total under 5s infection
       kids.y.pos <- previous.y.pos[res$Age[previous.y.pos] <= (5*365)]
       n.kids <- length(pos.05)
-      res$Incidence.05[res$Counter] <- sum((res$Status[kids.y.pos,res$Counter] %in% c(2,5)))/n.kids
+      incident_kid_pos <- kids.y.pos[which(res$Status[kids.y.pos,res$Counter] %in% c(2,5))]
+      
+      res$Incidence.05[res$Counter] <- length(incident_kid_pos)/n.kids
 
       ### Strain Values ########################################################################
 
@@ -917,12 +945,12 @@ hrp2_Simulation <- function(
       res$Prev.Mono.S.05[res$Counter] <- sum((res$N.Sens[pos.no.dels.05,res$Counter] > 0))/abs.prev.05
 
       ## Monoinfection Incidence ##
-      res$Clin.Mono.D[res$Counter] <- sum((res$N.Dels[intersect(pos.no.sens,previous.y.pos)] > 0))/(N*365)
-      res$Clin.Mono.S[res$Counter] <- sum((res$N.Sens[intersect(pos.no.dels,previous.y.pos)] > 0))/(N*365)
+      res$Clin.Mono.D[res$Counter] <- sum((res$N.Dels[intersect(pos.no.sens,incident_pos),res$Counter] > 0))/(N)
+      res$Clin.Mono.S[res$Counter] <- sum((res$N.Sens[intersect(pos.no.dels,incident_pos),res$Counter] > 0))/(N)
 
       ## Monoinfection Incidence Under 5s ##
-      res$Clin.Mono.D.05[res$Counter] <- sum((res$N.Dels[intersect(pos.no.sens.05,previous.y.pos)] > 0))/n.kids
-      res$Clin.Mono.S.05[res$Counter] <- sum((res$N.Sens[intersect(pos.no.dels.05,previous.y.pos)] > 0))/n.kids
+      res$Clin.Mono.D.05[res$Counter] <- sum((res$N.Dels[intersect(pos.no.sens.05,incident_kid_pos),res$Counter] > 0))/n.kids
+      res$Clin.Mono.S.05[res$Counter] <- sum((res$N.Sens[intersect(pos.no.dels.05,incident_kid_pos),res$Counter] > 0))/n.kids
 
       #####################################################################
 
@@ -1057,8 +1085,8 @@ hrp2_Simulation <- function(
     res$Last_Infection_Time.D[death.pos] <- t - runif(n = length(death.pos),min = 0,max = 1)
     res$Last_Bite_Time[death.pos] <- t - runif(n = length(death.pos),min = 0,max = 1)
     res$Age[death.pos] <- 0
-    res$zeta[death.pos] <- rlnorm(n = length(death.pos),meanlog = -zeta.sd/2, sdlog = sqrt(zeta.sd))
-    zeta[death.pos] <- res$zeta[death.pos]
+    res$Zeta[death.pos] <- rlnorm(n = length(death.pos),meanlog = -zeta.sd/2, sdlog = sqrt(zeta.sd))
+    zeta[death.pos] <- res$Zeta[death.pos]
 
 
     #######################################
@@ -1070,10 +1098,10 @@ hrp2_Simulation <- function(
     if(is.element(t,res$S.Times)) {
 
       ## use mean over last week for storage to help with capturing low incidence settings
-      last.7 <- match((i-6) : i,res$Buffer)
+      last.7 <- match((i-(storage_capture-1)) : i,res$Buffer)
       # which series column are the results going into
       pos <- match(t,res$S.Times)
-
+      #browser()
       ### immunity storage ###
 
       res$S.I.B[pos] <- mean(res$I.B)
@@ -1082,7 +1110,7 @@ hrp2_Simulation <- function(
       res$S.I.D[pos] <- mean(res$I.D)
 
       ### status and EIR storage ###
-      res$S.Status[,pos] <- table(factor(res$Status[,last.7],levels=1:6)) / (7*N)
+      res$S.Status[,pos] <- table(factor(res$Status[,last.7],levels=1:6)) / (storage_capture*N)
       res$S.dEIR[pos] <- mean(res$dEIR[last.7])
 
       ### Prevalence / Incidence Storage ###
@@ -1122,14 +1150,35 @@ hrp2_Simulation <- function(
   }
 
   ## print times
+ # browser()
   print(paste(N,"individuals analysed, over a period of ",max.time, " days at ",time.step,
               " day intervals within ", ((proc.time() - ptm)[3]),"secs"))
 
-  res$Status <- matrix(as.integer(res$Status),nrow = N)
-  res$N.Sens <- matrix(as.integer(res$N.Sens),nrow = N)
-  res$N.Dels <- matrix(as.integer(res$N.Dels),nrow = N)
+  # res$Status <- matrix(as.integer(res$Status),nrow = N)
+  # res$N.Sens <- matrix(as.integer(res$N.Sens),nrow = N)
+  # res$N.Dels <- matrix(as.integer(res$N.Dels),nrow = N)
 
-
+  # if we are not goign to keep the full results and just return storage series values
+  srs_dat <- function(res){
+    
+    s_names <- grep("^S[[:punct:]]",names(res))
+    dat <- as.data.frame.list(res[s_names[-2]],stringsAsFactors = FALSE)
+    
+    dat$Percentange_Clin_Mono <- dat$S.Clin.Mono.D / dat$S.Incidence
+    dat$Percentange_Clin_Mono05 <- dat$S.Clin.Mono.D.05 / dat$S.Incidence.05
+    dat$Percentange_Clin_Mono[is.na(dat$Percentange_Clin_Mono)] <- 0
+    dat$Percentange_Clin_Mono05[is.na(dat$Percentange_Clin_Mono05)] <- 0
+    dat$Percentange_Clin_Mono_S <- dat$S.Clin.Mono.S / dat$S.Incidence
+    dat$Percentange_Clin_Mono_S05 <- dat$S.Clin.Mono.S.05 / dat$S.Incidence.05
+    dat$Percentange_Clin_Mono_S[is.na(dat$Percentange_Clin_Mono_S)] <- 0
+    dat$Percentange_Clin_Mono_S05[is.na(dat$Percentange_Clin_Mono_S05)] <- 0
+    
+    dat
+  }
+  
+  if(just_storage_results){
+    res <- srs_dat(res)
+  }
 
   return(res)
 }
