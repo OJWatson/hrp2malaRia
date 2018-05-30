@@ -56,4 +56,4 @@ col=c("red", "black"), lty=1, cex=0.8,
 box.lty=2, box.lwd=2
 )
 ```
-![](Demo.png)
+![](demo.png)
