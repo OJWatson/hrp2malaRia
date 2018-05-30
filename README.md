@@ -35,7 +35,7 @@ annual EIR of 1.
 r <- hrp2_Simulation(N=2000, years=20, rdt.det = 0, EIR=1/365)
 
 # population 2
-r2 <- hrp2_Simulation(N=2000,years=20,rdt.det = .3,microscopy.use = .3)
+r2 <- hrp2_Simulation(N=2000,years=20,rdt.det = .3,microscopy.use = .3, EIR = 1/365)
 
 # and let's plot these - all veriables that begin with S. are series variables collected over time. 
 
