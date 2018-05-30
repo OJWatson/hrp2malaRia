@@ -50,4 +50,4 @@ legend(1500, .15, legend=c("Only RDT use", "70% RDT use, and 30% nonadherence to
 col=c("red", "black"), lty=1, cex=0.8,
 box.lty=2, box.lwd=2)
 ```
-![](demo.png)
+![](tools/demo.png)
