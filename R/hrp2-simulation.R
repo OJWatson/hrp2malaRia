@@ -22,12 +22,11 @@
 #' ## Demographic paramaters
 #' @param N Population Size. Default = 1000
 #' @param max.age Maximum age (years). Default = 100
-#' @param prev.0 Assumed starting prevalence. Default = 0.3
-#' @param strains.0 Maximum starting MOI possible. Default = 5
+#' @param strains.0 Ratio of wild type strains to hrp2 at initialisation. Must be an integer. Default = 10
 #' @param desired.freq Desired hrp2 deletion frequency to be enforced when a previous simulation is reloaded
 #' @param d.death Average life expectancy (years). Deafult = 21
 #' ## Epidemiological Parameters
-#' @param EIR Maximum EIR / day. Default = 200/365,
+#' @param EIR Maximum EIR / day. Default = 20/365,
 #' @param a.0 Age-dependent biting parameter (days). Default = 8*365
 #' @param rho Age-dependent biting parameter (days). Default = 0.85
 #' @param zeta.sd sd of lognormal distribution used to generate indiviudal specific biting. Default = 1.67
@@ -135,12 +134,11 @@ hrp2_Simulation <- function(
   ## demographic parameters
   N = 1000,
   max.age = 60,
-  prev.0 = 0.3,
-  strains.0 = 9,
+  strains.0 = 10,
   desired.freq = NULL,
   d.death = 21,
   ## epidemiological parameters
-  EIR = 200/365,
+  EIR = 20/365,
   a.0 = 8*365,
   rho = 0.85,
   zeta.sd = 1.67,

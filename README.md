@@ -51,3 +51,31 @@ col=c("red", "black"), lty=1, cex=0.8,
 box.lty=2, box.lwd=2)
 ```
 ![](tools/demo.png)
+
+## Input Variables to Change
+
+| Variable | Description                                                                   |
+|----------|-------------------------------------------------------------------------------|
+| *years* | Number of years simulation is run for. 20 years will be usually long enough to see hrp2 selection at low EIRs. |
+| *N* | Population size. The model is stochastic and so a larger N will enable clearer patterns to be found in model outputs, however, they will take longer to run. Population of 2000 should be a good balance of speed and clarity for demonstration purposes. For the analysis in the eLife modelling paper N was set to 100,000 |
+| *strains.0* | Starting ratio of strains in the population. This number must be an integer. The default is set to 10, which will mean that on initialisation there will be roughly 10 times as many wild type strains as there are hrp2 deleted. |
+| *EIR* | Annual EIR, provided as a fraction, i.e. the default EIR of 20/365 represents an EIR of 20. |
+| *ft* | Frequency of treatment being sought upon developing clinical disease. Must be a number between 0 and 1, with the default being 0.4, i.e. 40% of cases seek treatment. |
+| *rdt.det* | The probability that an individual only infected with hrp2-deleted strains still produces a positve RDT. The default is 1, i.e. no selective pressure. For the eLife paper we used a value of 0.25 that represented the approximate 25% chance that a positive RDT would still be prooduced due to hrp3 protein epitope cross reactivit y|
+| r*dt.nonadherence* | The probability that the result of an RDT is ignored, i.e. a negative RDT due to hrp2 deletions will still be treated. Default = 0, and in the eLife paper we used a value of 10% based on data collected by the WHO. |
+| *microscopy.use* | The proportion of cases that are tested by microscopy rather than RDT. Default = 0, and in the eLife paper we tested the impact of 30% of cases being diagnosd by microscopy, representing the ~70% of cases diagnosed being diagnosed by RDTs in 2014. |
+| *fitness* | Comparitive fitness of hrp2 deleted parasites. Default = 1, which mean the wild type is equally as likely to be passed on to mosquitoes as an hrp2 deleted parsaite. 0.8 results in the hrp2 deleted strain being 80% likely to be passed on, whereas a value of 1.2 would mean it is 20% more likely. |
+
+## Output Variables of Interest
+
+| Variable | Description                                                                   |
+|----------|-------------------------------------------------------------------------------|
+| *S.Times* | The timing of when the simulated population is sampled, i.e. the time at which all other series variables (variables that begin S.) were collected |
+| *S.Prev.All* | The prevalence of malaria within the whole population |
+| *S.Prev.05* | The prevalence of malaria within under 5s |
+| *S.N.Dels* | The proportion of all parasites that are hrp2 deleted |
+| *S.N.Dels.05* | The proportion of all parasites within under 5s that are hrp2 deleted |
+| *S.Incidence* | The daily clinical incidence of malaria. Mulitiply this by 365 to have the expected number of clinical cases of malaria a person within the whole population is expectd to have in a year |
+| *S.Incidence.05* | The daily clinical incidence of malaria. Mulitiply this by 365 to have the expected number of clinical cases of malaria a child under the age of 5 is expectd to have in a year |
+| *S.Prev.Mono.D* | The proportion of infected individuals who are only infected with hrp2 deleted parasites |
+| *S.Prev.Mono.D.05* | The proportion of infected individuals under the age of 5 who are only infected with hrp2 deleted parasites |

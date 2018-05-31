@@ -7,14 +7,14 @@
 hrp2_Simulation(ID = NULL, root = NULL, direct.input = NULL,
   years = 0.5, time.step = 1, states = c(1, 2, 3, 4, 5, 6),
   storage = 50, storage_capture = 30, just_storage_results = FALSE,
-  N = 1000, max.age = 60, prev.0 = 0.3, strains.0 = 9,
-  desired.freq = NULL, d.death = 21, EIR = 200/365, a.0 = 8 * 365,
-  rho = 0.85, zeta.sd = 1.67, omega = 0.8405912, theta = 1, ft = 0.4,
-  rdt.det = 1, rdt.nonadherence = 0, microscopy.use = 0,
-  include.nmf = FALSE, fever.age.breaks = c(-0.1, 1, 2, 3, 4, 5, 7, 9, 11,
-  13, 15, 20, 25, 30, 101), annual.nmf.per.age.bracket = c(2.235, 1.841,
-  1.503, 1.175, 0.928, 0.67, 0.486, 0.512, 0.475, 0.429, 0.652, 0.747, 0.804,
-  0.789), nmf.multiplier = 1, ss = NULL, fitness = 1, mu.0 = 0.132,
+  N = 1000, max.age = 60, strains.0 = 10, desired.freq = NULL,
+  d.death = 21, EIR = 20/365, a.0 = 8 * 365, rho = 0.85,
+  zeta.sd = 1.67, omega = 0.8405912, theta = 1, ft = 0.4, rdt.det = 1,
+  rdt.nonadherence = 0, microscopy.use = 0, include.nmf = FALSE,
+  fever.age.breaks = c(-0.1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 20, 25, 30,
+  101), annual.nmf.per.age.bracket = c(2.235, 1.841, 1.503, 1.175, 0.928,
+  0.67, 0.486, 0.512, 0.475, 0.429, 0.652, 0.747, 0.804, 0.789),
+  nmf.multiplier = 1, ss = NULL, fitness = 1, mu.0 = 0.132,
   beta = c(0.05879106, 0.07108894), a.k = 0.30677, delay.mos = 10,
   delay.gam = 12, d.E = 12, d.I = 200, d.T = 5, d.D = 5, d.U = 110,
   d.P = 25, d.A = d.I - d.D, d.1 = 0.160527, d.ID = 10 * 365,
@@ -44,16 +44,14 @@ hrp2_Simulation(ID = NULL, root = NULL, direct.input = NULL,
 
 \item{max.age}{Maximum age (years). Default = 100}
 
-\item{prev.0}{Assumed starting prevalence. Default = 0.3}
-
-\item{strains.0}{Maximum starting MOI possible. Default = 5}
+\item{strains.0}{Ratio of wild type strains to hrp2 at initialisation. Must be an integer. Default = 10}
 
 \item{desired.freq}{Desired hrp2 deletion frequency to be enforced when a previous simulation is reloaded}
 
 \item{d.death}{Average life expectancy (years). Deafult = 21
 ## Epidemiological Parameters}
 
-\item{EIR}{Maximum EIR / day. Default = 200/365,}
+\item{EIR}{Maximum EIR / day. Default = 20/365,}
 
 \item{a.0}{Age-dependent biting parameter (days). Default = 8*365}
 
