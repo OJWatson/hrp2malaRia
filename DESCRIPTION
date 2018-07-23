@@ -6,6 +6,9 @@ Date: 2018-05-11
 Author: OJ Watson
 Maintainer: <oj.watson@hotmail.co.uk>
 Description: Individual based malaria transmission model.
+Depends: 
+   R (>= 3.1.0),
+   shiny
 Imports:
   ggplot2,
   reshape2
