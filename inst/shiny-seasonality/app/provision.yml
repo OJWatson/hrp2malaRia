@@ -1,0 +1,6 @@
+self(true)
+packages:
+  - ggplot2
+  - dplyr
+  - markdown
+  
