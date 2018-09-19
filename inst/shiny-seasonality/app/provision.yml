@@ -3,4 +3,5 @@ packages:
   - ggplot2
   - dplyr
   - markdown
+  - shiny
   
