@@ -1,4 +1,4 @@
-self(true)
+self: true
 packages:
   - ggplot2
   - dplyr
