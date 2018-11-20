@@ -1,6 +1,8 @@
 # hrp2malaRia
 
-*Individual Malaria modelling*
+Individual based malaria transmission model for the study of *P. falciparum* *pfhrp2* gene deletions. The model is an extension of the Imperial College transmission model used as part of the [Global Technical Strategy 2030 costing exercise](https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(15)00423-5/fulltext), and was used to characterise the drivers of *pfhrp2* deletion selection in the following publication:
+
+ > Watson OJ, Slater HC, Verity R, et al. Modelling the drivers of the spread of Plasmodium falciparum hrp2 gene deletions in sub-Saharan Africa. Elife 2017; 6: e25008. (https://elifesciences.org/articles/25008)
 
 Installing *hrp2malaRia* devel
 -------------
