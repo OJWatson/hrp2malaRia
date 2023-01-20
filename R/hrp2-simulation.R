@@ -36,6 +36,8 @@
 #' @param beta Birthrate in form of y = beta[1]*EIR + beta[2]. Default = c(0.0572289,0.0696121)
 #' @param theta Seasonal effects. Default = 1
 #' @param a.k Daily biting rate. Default = 0.30667
+#' @param ss Seasonal fourier terms for rainfall. 7 needed (intercept and first 3 cos and sin terms). Default = NULL
+#' @param fitness Relative fitness of hrp2 deletions. Default = 1, i.e. no fitness cost. 
 #' ## Diagnostics and nmf
 #' @param ft Probability of receiving assesment. Default = 0.4
 #' @param rdt.det Probability of detecting malaria given mono infection of hrp2' strains. Default = 1
@@ -90,8 +92,15 @@
 #' the probability of detection of parasites as calculated using pre-erythrcytic immunity and age
 #' @param c.P Contribution from P. Default = 0
 #' @param g.1 Relates infectiousness probability of detection. Default = 1.82
+#' ## Other params to do with reloading model runs
+#' @param direct.input R object for old model run to be restarted. Default = NULL. Takes priority over saved.rds and ID/root
+#' @param saved.rds File path for saved model run as rds. Default = NULL. Takes priority over ID/root
+#' @param ID ID of model run saved object when using didehpc tools. Default = NULL
+#' @param root Name of context root when using didehpc tools to submit and save model runs. Default = NULL.
 #'
 #' @export
+#' @importFrom stats rlnorm
+#' @importFrom utils head
 #' 
 #' @return Result a list of 59 elements including the following
 #' Time - Vector of time steps considered
@@ -115,13 +124,12 @@
 #' N.Sens/N.Dels - sum of sensitive to diagnostic and deletion strains
 #' Incidence - Clinical cases / population / per day
 #' Mono - monoinfected individual proportions
-#' FOIv - Force of infection to vectors
+#' FOIv - Force of infection to vectorsf
 #' S. ... - Series storage of various of the above
-
-
 hrp2_Simulation <- function(
   ## simulation parameters
   ID=NULL,
+  saved.rds=NULL,
   root=NULL,
   direct.input = NULL,
   years = 0.5,
@@ -351,8 +359,8 @@ hrp2_Simulation <- function(
 
     if(!is.null(direct.input)){
       reload.res <- direct.input
-    } else if (length(unlist(strsplit(ID,"/")))>1){
-      reload.res <- readRDS(ID)
+    } else if (!is.null(saved.rds)){
+      reload.res <- readRDS(saved.rds)
     } else {
       reload.res <- context::task_result(id = ID,db = root)
     }
@@ -372,6 +380,8 @@ hrp2_Simulation <- function(
     res$S.I.D <- c(reload.res$S.I.D,rep(0,length(save.times)))
     res$S.Prev.All <- c(reload.res$S.Prev.All,rep(0,length(save.times)))
     res$S.Prev.05 <- c(reload.res$S.Prev.05,rep(0,length(save.times)))
+    res$S.PCR.All <- c(reload.res$S.PCR.All,rep(0,length(save.times)))
+    res$S.Micro.210 <- c(reload.res$S.Micro.210,rep(0,length(save.times)))
     res$S.N.Sens <- c(reload.res$S.N.Sens,rep(0,length(save.times)))
     res$S.N.Dels <- c(reload.res$S.N.Dels,rep(0,length(save.times)))
     res$S.N.Sens.05 <- c(reload.res$S.N.Sens.05,rep(0,length(save.times)))
@@ -607,7 +617,9 @@ hrp2_Simulation <- function(
               "S.Clin.Mono.S" = vector(mode = "numeric", length = srs),
               "S.Clin.Mono.D.05" = vector(mode = "numeric", length = srs),
               "S.Clin.Mono.S.05" = vector(mode = "numeric", length = srs),
-              "S.dEIR" = vector(mode = "numeric", length = srs)
+              "S.dEIR" = vector(mode = "numeric", length = srs),
+              "S.PCR.All" = vector(mode = "numeric", length = srs),
+              "S.Micro.210" = vector(mode = "numeric", length = srs)
 
   )
 
@@ -1132,6 +1144,47 @@ hrp2_Simulation <- function(
       res$S.Clin.Mono.S[pos] <- mean(res$Clin.Mono.S[last.7])
       res$S.Clin.Mono.D.05[pos] <- mean(res$Clin.Mono.D.05[last.7])
       res$S.Clin.Mono.S.05[pos] <- mean(res$Clin.Mono.S.05[last.7])
+      
+      # Microscopy 2-10
+      pos.2.10 <- which(res$Age<(365*10) & res$Age>(365*2))
+      pos.2.10_D.T <- arrayInd(which(res$Status[pos.2.10,last.7] %in% c(2,5)), dim(res$Status[pos.2.10,]))
+      pos.2.10_A <- which(res$Status[pos.2.10,last.7] == 3, arr.ind = TRUE)
+      pos.2.10_U <- which(res$Status[pos.2.10,last.7] == 4, arr.ind = TRUE)
+      
+      # total PCR detectable in D and T, i.e. all
+      tot.PCR.inf.2.10.D.T <- nrow(pos.2.10_D.T)
+      
+      # detectability of As for microscopy
+      f.D.A <- 1 - ((1 - f.D0) / (1 + ((res$Age[pos.2.10_A[,1]] / a.D)^g.D)))
+      q.A <- d.1 + ( (1 - d.1) / (1 + f.D.A*((res$I.D[pos.2.10_A[,1]] / I.D0)^k.D)))
+      
+      # all A capture by PCR
+      tot.PCR.inf.2.10.A <- nrow(pos.2.10_A)
+      #tot.PCR.inf.2.10.A <- sum(q.A^0.757)
+      
+      # detectability of Us for PCR and microscopy 2 - 10
+      f.D.U <- 1 - ((1 - f.D0) / (1 + ((res$Age[pos.2.10_U[,1]] / a.D)^g.D)))
+      q.U <- d.1 + ( (1 - d.1) / (1 + f.D.U*((res$I.D[pos.2.10_U[,1]] / I.D0)^k.D)))
+      tot.PCR.inf.2.10.U <- sum(q.U^0.186)
+      
+      # Add all together to get micro 2-10
+      tot.PCR.inf.2.10 <- (round(tot.PCR.inf.2.10.D.T+tot.PCR.inf.2.10.A+tot.PCR.inf.2.10.U)) / total.2.10.over.time
+      tot.microscopy.inf.2.10 <- (round(tot.PCR.inf.2.10.D.T+sum(q.A)+sum(q.U))) / total.2.10.over.time
+      res$S.Micro.210[pos] <- tot.microscopy.inf.2.10
+      
+      # PCR All age
+      pos.allage_U <- which(res$Status[,last.7] == 4, arr.ind = TRUE)
+      total.2.10.over.time <- length(pos.2.10) * storage_capture
+      
+      # detectability of Us for PCR and microscopy all age
+      f.D.U <- 1 - ((1 - f.D0) / (1 + ((res$Age[pos.allage_U[,1]] / a.D)^g.D)))
+      q.U <- d.1 + ( (1 - d.1) / (1 + f.D.U*((res$I.D[pos.allage_U[,1]] / I.D0)^k.D)))
+      tot.PCR.inf.allage.U <- sum(q.U^0.186)
+      
+      # Add all together here as we can ust use states for non U
+      tot.PCR.inf.allage <- (round(sum(res$Status[,last.7] %in% c(2,3,5))+tot.PCR.inf.allage.U)) / (storage_capture * N)
+      
+      res$S.PCR.All[pos] <- tot.PCR.inf.allage
 
     }
 

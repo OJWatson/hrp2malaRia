@@ -4,29 +4,91 @@
 \alias{hrp2_Simulation}
 \title{Individual Based Malaria Simulator}
 \usage{
-hrp2_Simulation(ID = NULL, root = NULL, direct.input = NULL,
-  years = 0.5, time.step = 1, states = c(1, 2, 3, 4, 5, 6),
-  storage = 50, storage_capture = 30, just_storage_results = FALSE,
-  N = 1000, max.age = 60, strains.0 = 10, desired.freq = NULL,
-  d.death = 21, EIR = 20/365, a.0 = 8 * 365, rho = 0.85,
-  zeta.sd = 1.67, omega = 0.8405912, theta = 1, ft = 0.4, rdt.det = 1,
-  rdt.nonadherence = 0, microscopy.use = 0, include.nmf = FALSE,
-  fever.age.breaks = c(-0.1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 20, 25, 30,
-  101), annual.nmf.per.age.bracket = c(2.235, 1.841, 1.503, 1.175, 0.928,
-  0.67, 0.486, 0.512, 0.475, 0.429, 0.652, 0.747, 0.804, 0.789),
-  nmf.multiplier = 1, ss = NULL, fitness = 1, mu.0 = 0.132,
-  beta = c(0.05879106, 0.07108894), a.k = 0.30677, delay.mos = 10,
-  delay.gam = 12, d.E = 12, d.I = 200, d.T = 5, d.D = 5, d.U = 110,
-  d.P = 25, d.A = d.I - d.D, d.1 = 0.160527, d.ID = 10 * 365,
-  I.D0 = 1.577533, k.D = 0.476614, u.D = 9.44512, a.D = 8001.99,
-  f.D0 = 0.007055, g.D = 4.8183, b.0 = 0.590076, b.1 = 0.5, d.B = 10 *
-  365, I.B0 = 43.8787, k.B = 2.15506, u.B = 7.19919, phi.0 = 0.791666,
-  phi.1 = 0.000737, d.CA = 10950, I.C0 = 18.02366, k.C = 2.36949,
-  u.C = 6.06349, P.M = 0.774368, d.CM = 67.6952, g.1 = 1.82425,
-  c.S = 0, c.D = 0.0676909, c.T = 0.322 * c.D, c.U = 0.0062, c.A = 0,
-  c.P = 0)
+hrp2_Simulation(
+  ID = NULL,
+  saved.rds = NULL,
+  root = NULL,
+  direct.input = NULL,
+  years = 0.5,
+  time.step = 1,
+  states = c(1, 2, 3, 4, 5, 6),
+  storage = 50,
+  storage_capture = 30,
+  just_storage_results = FALSE,
+  N = 1000,
+  max.age = 60,
+  strains.0 = 10,
+  desired.freq = NULL,
+  d.death = 21,
+  EIR = 20/365,
+  a.0 = 8 * 365,
+  rho = 0.85,
+  zeta.sd = 1.67,
+  omega = 0.8405912,
+  theta = 1,
+  ft = 0.4,
+  rdt.det = 1,
+  rdt.nonadherence = 0,
+  microscopy.use = 0,
+  include.nmf = FALSE,
+  fever.age.breaks = c(-0.1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 20, 25, 30, 101),
+  annual.nmf.per.age.bracket = c(2.235, 1.841, 1.503, 1.175, 0.928, 0.67, 0.486, 0.512,
+    0.475, 0.429, 0.652, 0.747, 0.804, 0.789),
+  nmf.multiplier = 1,
+  ss = NULL,
+  fitness = 1,
+  mu.0 = 0.132,
+  beta = c(0.05879106, 0.07108894),
+  a.k = 0.30677,
+  delay.mos = 10,
+  delay.gam = 12,
+  d.E = 12,
+  d.I = 200,
+  d.T = 5,
+  d.D = 5,
+  d.U = 110,
+  d.P = 25,
+  d.A = d.I - d.D,
+  d.1 = 0.160527,
+  d.ID = 10 * 365,
+  I.D0 = 1.577533,
+  k.D = 0.476614,
+  u.D = 9.44512,
+  a.D = 8001.99,
+  f.D0 = 0.007055,
+  g.D = 4.8183,
+  b.0 = 0.590076,
+  b.1 = 0.5,
+  d.B = 10 * 365,
+  I.B0 = 43.8787,
+  k.B = 2.15506,
+  u.B = 7.19919,
+  phi.0 = 0.791666,
+  phi.1 = 0.000737,
+  d.CA = 10950,
+  I.C0 = 18.02366,
+  k.C = 2.36949,
+  u.C = 6.06349,
+  P.M = 0.774368,
+  d.CM = 67.6952,
+  g.1 = 1.82425,
+  c.S = 0,
+  c.D = 0.0676909,
+  c.T = 0.322 * c.D,
+  c.U = 0.0062,
+  c.A = 0,
+  c.P = 0
+)
 }
 \arguments{
+\item{ID}{ID of model run saved object when using didehpc tools. Default = NULL}
+
+\item{saved.rds}{File path for saved model run as rds. Default = NULL. Takes priority over ID/root}
+
+\item{root}{Name of context root when using didehpc tools to submit and save model runs. Default = NULL.}
+
+\item{direct.input}{R object for old model run to be restarted. Default = NULL. Takes priority over saved.rds and ID/root}
+
 \item{years}{Length of Simulation (years). Default = 0.5}
 
 \item{time.step}{Simulation time interval considered in days. Has to be 1.}
@@ -82,12 +144,16 @@ Default is mean across 5 representative surveys from Burundi 2012, Liberia 2009/
 \item{nmf.multiplier}{Multiplication for annual.nmf.per.age.bracket to introduce sensitivity. Default = 1
 ## delays and durations}
 
+\item{ss}{Seasonal fourier terms for rainfall. 7 needed (intercept and first 3 cos and sin terms). Default = NULL}
+
+\item{fitness}{Relative fitness of hrp2 deletions. Default = 1, i.e. no fitness cost. 
+## Diagnostics and nmf}
+
 \item{mu.0}{Baseline mosquito mortality. Default = 0.132}
 
 \item{beta}{Birthrate in form of y = beta[1]*EIR + beta[2]. Default = c(0.0572289,0.0696121)}
 
-\item{a.k}{Daily biting rate. Default = 0.30667
-## Diagnostics and nmf}
+\item{a.k}{Daily biting rate. Default = 0.30667}
 
 \item{delay.mos}{Mosquito extrinsic incubation period (days). Default = 10}
 
@@ -155,7 +221,8 @@ Default is mean across 5 representative surveys from Burundi 2012, Liberia 2009/
 \item{d.CM}{Inverse of decay rate of maternal immunity (days). Default = 67.7
 ## contributions to infectious reservoir by state and age}
 
-\item{g.1}{Relates infectiousness probability of detection. Default = 1.82}
+\item{g.1}{Relates infectiousness probability of detection. Default = 1.82
+## Other params to do with reloading model runs}
 
 \item{c.S}{Contribution from S. Default = 0}
 
@@ -193,7 +260,7 @@ Prev - Daily prevalence
 N.Sens/N.Dels - sum of sensitive to diagnostic and deletion strains
 Incidence - Clinical cases / population / per day
 Mono - monoinfected individual proportions
-FOIv - Force of infection to vectors
+FOIv - Force of infection to vectorsf
 S. ... - Series storage of various of the above
 }
 \description{
