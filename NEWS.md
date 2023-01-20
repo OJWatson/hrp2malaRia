@@ -1,3 +1,7 @@
+## hrp2malaRia 0.1.2
+
+* Fix to hrp2_Simulation introduced during previous version
+
 ## hrp2malaRia 0.1.1
 
 * microscopy 2-10 and PCR all ages now tracked in series

@@ -1147,6 +1147,7 @@ hrp2_Simulation <- function(
       
       # Microscopy 2-10
       pos.2.10 <- which(res$Age<(365*10) & res$Age>(365*2))
+      total.2.10.over.time <- length(pos.2.10) * storage_capture
       pos.2.10_D.T <- arrayInd(which(res$Status[pos.2.10,last.7] %in% c(2,5)), dim(res$Status[pos.2.10,]))
       pos.2.10_A <- which(res$Status[pos.2.10,last.7] == 3, arr.ind = TRUE)
       pos.2.10_U <- which(res$Status[pos.2.10,last.7] == 4, arr.ind = TRUE)
@@ -1174,7 +1175,6 @@ hrp2_Simulation <- function(
       
       # PCR All age
       pos.allage_U <- which(res$Status[,last.7] == 4, arr.ind = TRUE)
-      total.2.10.over.time <- length(pos.2.10) * storage_capture
       
       # detectability of Us for PCR and microscopy all age
       f.D.U <- 1 - ((1 - f.D0) / (1 + ((res$Age[pos.allage_U[,1]] / a.D)^g.D)))

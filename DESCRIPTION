@@ -1,8 +1,8 @@
 Package: hrp2malaRia
 Type: Package
 Title: pfhrp2 gene deletion malaria modelling
-Version: 0.1.1
-Date: 2019-03-20
+Version: 0.1.2
+Date: 2023-01-20
 Author: OJ Watson
 Maintainer: <oj.watson@hotmail.co.uk>
 Description: Individual based malaria transmission model.
@@ -13,9 +13,11 @@ Imports:
   reshape2,
   shiny
 Suggests:
-  context  
+    context,
+    testthat (>= 3.0.0)
 License: MIT + file LICENSE
 LazyData: TRUE
 RoxygenNote: 7.1.2
 Encoding: UTF-8
 Remotes: mrc-ide/context
+Config/testthat/edition: 3
