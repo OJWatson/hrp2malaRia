@@ -45,8 +45,9 @@
 #' @param microscopy.use Probability of microscopy use. Default = 0, i.e. no microscopy
 #' @param include.nmf Boolean detailing whether to include nmf section. Default = FALSE
 #' @param fever.age.breaks Age breaks for fevers
-#' @param annual.nmf.per.age.bracket Annual number of non malarial fevers for each age bracket in fever.age.breaks.
-#' Default is mean across 5 representative surveys from Burundi 2012, Liberia 2009/2011 and Nigeria 2010/2015
+#' @param annual.nmf.per.age.bracket Annual number of non malarial fevers sufficiently severe to trigger
+#'   treatment seeking for the fever and receieve assessment. These are reported for each age bracket in fever.age.breaks.
+#'   Default is based on eLife 2017 Watson et al.
 #' @param nmf.multiplier Multiplication for annual.nmf.per.age.bracket to introduce sensitivity. Default = 1
 #' ## delays and durations
 #' @param delay.mos Mosquito extrinsic incubation period (days). Default = 10
@@ -1040,8 +1041,9 @@ hrp2_Simulation <- function(
 
         # identify any hrp2' only individuals
         rdt.det.D.or.A.nmf <- rep(1,length(D.or.A.pos.nmf))
+        
         # probability that hrp2' only individual will still be treated, 1 - chance of not being hrp3, microscopied or nonadherence
-        rdt.det.D.or.A.nmf[which(res$N.Sens[D.or.A.pos.nmf,res$Counter] == 0)] <- ft * (1 - ((1-rdt.det)*(1-rdt.nonadherence)*(1-microscopy.use)))
+        rdt.det.D.or.A.nmf[which(res$N.Sens[D.or.A.pos.nmf,res$Counter] == 0)] <- (1 - ((1-rdt.det)*(1-rdt.nonadherence)*(1-microscopy.use)))
 
         D.or.A.treated.pos.nmf <- D.or.A.pos.nmf[which(rbinom(length(D.or.A.pos.nmf),size = 1,rdt.det.D.or.A.nmf)==1)]
         res$Status[D.or.A.treated.pos.nmf,res$Counter] <- 5
