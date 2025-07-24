@@ -26,6 +26,7 @@ mytheme <- ggplot2::theme_classic() + ggplot2::theme_light() +
 
 # data transform prep
 dat <- readRDS("administrative_covariates.rds")
+Encoding(levels(dat$Country)) <- "latin1"
 mal_dat <- which(dat$PfPR_2015>0 & dat$Treat_2015>0)
 dat <- dat[mal_dat,]
 admin_res <- readRDS("admin_final_stats.rds")
